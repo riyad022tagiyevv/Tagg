@@ -830,9 +830,6 @@ async def mentionall(event):
 #güzel isimler...!!! cumle = ['Avcı', 'Canavar', 'Vampir', 'Zombi', 'Takıntılı', 'Mazoşist', 'Ejderha', 'Uykucu', 'Göze Çarpmayan', 'Çalışkan', 'Melek', 'Tembel', 'Şişman', 'Cadı', 'Sahtekar', 'Yalancı', 'Zombi Avcısı', 'Cadı Avcısı', 'Kardeş', 'Bukalemun', 'Etkileyici', 'Yakışıklı', 'Güzel', 'Çirkin', 'Çocuk', 'Star', 'Yön Bulucu', 'Ateş böceği',] 
 # güzel isimler...!!!
 
- @client.on(events.NewMessage(pattern='^(?i)/cancel'))async def cancel(event): global anlik_calisan anlik_calisan.remove(event.chat_id)
-
-
 # Emoji Modulu (aykhan_s)
 @client.on(events.NewMessage(pattern="^/oyuntag ?(.*)"))
 async def etag(event):
