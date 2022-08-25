@@ -93,14 +93,14 @@ async def start(event):
      await client.send_message(-1001606470120, f"ℹ️ **Yeni Kullanıcı -** {ad}")
      return await event.reply(f"❤️ **Merhaba ben Jasmine Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
                       [
-                       Button.inline("📚 Komutlar", data="komutlar")
+                       Button.inline("📚 Commands", data="komutlar")
                       ],
                       [
                        Button.url('➕ Gruba Ekle', 'https://t.me/JasmineTaggerBot?startgroup=a'),
                        Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
-                       Button.url('Sahibim 👨‍💻', 'https://t.me/Yorgun_Birisi')
+                       Button.url('My Chat 💬', 'https://t.me/Alay57Chat')
                       ],
                     ),
                     link_preview=False)
@@ -114,16 +114,16 @@ async def start(event):
 async def handler(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await event.edit(f"❤️ **Merhaba ben Jasmine Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
+     await event.edit(f"💖😋 **Merhaba ben Jasmine Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
                       [
                        Button.inline("📚 Komutlar", data="komutlar")
                       ],
                       [
                        Button.url('Beni Gruba Ekle ✅', 'https://t.me/JasmineTaggerBot?startgroup=a'),
-                       Button.url('Sahibim 👤', 'https://t.me/Yorgun_Birisi')
+                       Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
-                       Button.url('Kanal 📣', 'https://t.me/FurkanS2err')
+                       Button.url('Support 🤝', 'https://t.me/JasmineSup')
                       ],
                     ),
                     link_preview=False)
@@ -140,7 +140,7 @@ async def handler(event):
                       Button.inline("✏️ Ping", data="pingpong")
                       ],
                       [
-                      Button.inline("Sahip Komutları 👨‍💻", data="kullanici")
+                      Button.inline("Owner Commands 📚", data="kullanici")
                       ],
                       [
                       Button.inline("◀️ Geri", data="start")
