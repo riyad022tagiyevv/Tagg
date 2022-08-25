@@ -116,7 +116,7 @@ async def handler(event):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await event.edit(f"💖😋 **Merhaba ben Jasmine Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
                       [
-                       Button.inline("📚 Komutlar", data="komutlar")
+                       Button.inline("📚 Commands", data="komutlar")
                       ],
                       [
                        Button.url('Me Add Group', 'https://t.me/JasmineTaggerBot?startgroup=a'),
@@ -133,7 +133,7 @@ async def handler(event):
 async def handler(event):
     await event.edit(f"__İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
                       [
-                      Button.inline("📌 Etiket Komutları", data="etiketkomutlar")
+                      Button.inline("📌 Label Commands", data="etiketkomutlar")
                       ],
                       [
                       Button.inline("⛔️ Process Stop", data="islemidurdur"),
