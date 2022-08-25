@@ -60,7 +60,7 @@ app = Client("GUNC",
 
 anlik_calisan = []
 
-ozel_list = [1954836158]
+ozel_list = [5676715742]
 anlik_calisan = []
 grup_sayi = []
 etiketuye = []
@@ -100,7 +100,7 @@ async def start(event):
                        Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
-                       Button.url('My Chat 💬', 'https://t.me/Alay57Chat')
+                       Button.url('Sahibim 👨‍💻', 'https://t.me/Yorgun_Birisi')
                       ],
                     ),
                     link_preview=False)
@@ -120,10 +120,10 @@ async def handler(event):
                       ],
                       [
                        Button.url('Beni Gruba Ekle ✅', 'https://t.me/JasmineTaggerBot?startgroup=a'),
-                       Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
+                       Button.url('Sahibim 👤', 'https://t.me/Yorgun_Birisi')
                       ],
                       [
-                       Button.url('Kanal 📣', 'https://t.me/Tamistedigim')
+                       Button.url('Kanal 📣', 'https://t.me/FurkanS2err')
                       ],
                     ),
                     link_preview=False)
@@ -492,7 +492,7 @@ async def son_durum(event):
     sender = await event.get_sender()
     if sender.id not in ozel_list:
       return
-    await event.respond(f"**@MajesteTaggerBot İstatistikleri 🤖**\n\nToplam Grup: `{len(grup_sayi)}`\nAnlık Çalışan Grup: `{len(anlik_calisan)}`")
+    await event.respond(f"**@JasmineTaggerBot İstatistikleri 🤖**\n\nToplam Grup: `{len(grup_sayi)}`\nAnlık Çalışan Grup: `{len(anlik_calisan)}`")
 
 
 emoji = " ❤️ 🧡 💛 💚 💙 💜 🖤 🤍 🤎 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 " \
@@ -909,7 +909,7 @@ async def duyuru(event):
 
 @client.on(events.NewMessage(pattern="^/furkan$"))
 async def start(event):
-  await event.reply(f"** @MajesteTaggerBotBot Stats**", buttons=(
+  await event.reply(f"** @JasmineTaggerBot Stats**", buttons=(
                       [
                        Button.inline("Stats", data="stats")
                       ],
