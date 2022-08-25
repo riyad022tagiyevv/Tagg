@@ -91,16 +91,16 @@ async def start(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await client.send_message(-1001771876516, f"ℹ️ **Yeni Kullanıcı -** {ad}")
-     return await event.reply(f"❤️ **Merhaba ben 𝐌𝐚𝐣𝐞𝐬𝐭𝐞 𝐓𝐚𝐠𝐠𝐞𝐫 𝐁𝐨𝐭** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
+     return await event.reply(f"❤️ **Merhaba ben Jasmine Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
                       [
                        Button.inline("📚 Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('➕ Gruba Ekle', 'https://t.me/MajesteTaggerBot?startgroup=a'),
-                       Button.url('Sahibim 👤', 'https://t.me/Yorgun_Birisi')
+                       Button.url('➕ Gruba Ekle', 'https://t.me/JasmineTaggerBot?startgroup=a'),
+                       Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
-                       Button.url('Sohbet Grubu 📣', 'https://t.me/MajesteSohbetTr')
+                       Button.url('Sahibim 👨‍💻', 'https://t.me/Yorgun_Birisi')
                       ],
                     ),
                     link_preview=False)
@@ -114,16 +114,16 @@ async def start(event):
 async def handler(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await event.edit(f"❤️ **Merhaba ben 𝐌𝐚𝐣𝐞𝐬𝐭𝐞 𝐓𝐚𝐠𝐠𝐞𝐫 𝐁𝐨𝐭** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
+     await event.edit(f"❤️ **Merhaba ben Jasmine Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
                       [
                        Button.inline("📚 Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('Beni Gruba Ekle ✅', 'https://t.me/MajesteTaggerBot?startgroup=a'),
+                       Button.url('Beni Gruba Ekle ✅', 'https://t.me/JasmineTaggerBot?startgroup=a'),
                        Button.url('Sahibim 👤', 'https://t.me/Yorgun_Birisi')
                       ],
                       [
-                       Button.url('Sohbet Grubu 📣', 'https://t.me/MajesteSohbetTr')
+                       Button.url('Kanal 📣', 'https://t.me/FurkanS2err')
                       ],
                     ),
                     link_preview=False)
@@ -181,12 +181,12 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="stats"))
 async def handler(event):
-    await event.edit(f"**@MajesteTaggerbot İstatistikleri **\n\nToplam Grup: `{len(grup_sayi)}`\nAnlık Çalışan Grup: `{len(anlik_calisan)}`")
+    await event.edit(f"**@JasmineTaggerBot İstatistikleri **\n\nToplam Grup: `{len(grup_sayi)}`\nAnlık Çalışan Grup: `{len(anlik_calisan)}`")
 
 
 @client.on(events.callbackquery.CallbackQuery(data="etiketkomutlar"))
 async def handler(event):
-    await event.edit(f"**/utag < Mesajınız >** \n- Üyelere 5 li Etiket Atar \n\n**/atag < Mesajınız >** \n- Gruptaki Sadece Adminleri Etiketler \n\n**/soztag < Mesajınız >** \n- Gruptaki Üyeleri Hoş Sözler İle Etiketler \n\n**/etag < Mesajınız >** \n- Gruptaki Üyeleri Emojiler İle Etiketler \n\n**/tektag < Mesajınız >** \n- Gruptaki Üyeleri Tek Tek Etiketler \n\n**/hiztag < Mesajınız >** \n- Gruptaki Kullanıcıları Aşırı Hızlı Bir Şekilde Etiketler \n\n**/oyuntag < Mesajınız >** \n- Gruptaki Üyeleri Oyun Rölleri İle Etiketler \n\n\n**Bu Komutları Sadece Yöneticiler Kullanabilir....!**", buttons=(
+    await event.edit(f"**/utag < Mesajınız >** \n- Üyelere 5 li Etiket Atar \n\n**/atag < Mesajınız >** \n- Gruptaki Sadece Adminleri Etiketler \n\n**/soztag < Mesajınız >** \n- Gruptaki Üyeleri Hoş Sözler İle Etiketler \n\n**/etag < Mesajınız >** \n- Gruptaki Üyeleri Emojiler İle Etiketler \n\n**/tektag < Mesajınız >** \n- Gruptaki Üyeleri Tek Tek Etiketler \n\n**/hiztag < Mesajınız >** \n- Gruptaki Kullanıcıları Aşırı Hızlı Bir Şekilde Etiketler \n\n\n**Bu Komutları Sadece Yöneticiler Kullanabilir....!**", buttons=(
                       [
                       Button.inline("◀️ Geri", data="komutlar")
                       ],
