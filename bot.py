@@ -90,7 +90,7 @@ async def start(event):
   if event.is_private:
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await client.send_message(-1001771876516, f"ℹ️ **Yeni Kullanıcı -** {ad}")
+     await client.send_message(-1001606470120, f"ℹ️ **Yeni Kullanıcı -** {ad}")
      return await event.reply(f"❤️ **Merhaba ben Jasmine Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
                       [
                        Button.inline("📚 Komutlar", data="komutlar")
@@ -100,7 +100,7 @@ async def start(event):
                        Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
-                       Button.url('Sahibim 👨‍💻', 'https://t.me/iamZ3NT4')
+                       Button.url('Sahibim 👨‍💻', 'https://t.me/Yorgun_Birisi')
                       ],
                     ),
                     link_preview=False)
@@ -120,10 +120,10 @@ async def handler(event):
                       ],
                       [
                        Button.url('Beni Gruba Ekle ✅', 'https://t.me/JasmineTaggerBot?startgroup=a'),
-                       Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
+                       Button.url('Sahibim 👤', 'https://t.me/Yorgun_Birisi')
                       ],
                       [
-                       Button.url('Kanal 📣', 'https://t.me/Tamistedigim')
+                       Button.url('Kanal 📣', 'https://t.me/FurkanS2err')
                       ],
                     ),
                     link_preview=False)
