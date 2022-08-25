@@ -100,7 +100,7 @@ async def start(event):
                        Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
-                       Button.url('Sahibim 👨‍💻', 'https://t.me/Yorgun_Birisi')
+                       Button.url('My Chat 💬', 'https://t.me/Alay57Chat')
                       ],
                     ),
                     link_preview=False)
@@ -120,10 +120,10 @@ async def handler(event):
                       ],
                       [
                        Button.url('Beni Gruba Ekle ✅', 'https://t.me/JasmineTaggerBot?startgroup=a'),
-                       Button.url('Sahibim 👤', 'https://t.me/Yorgun_Birisi')
+                       Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
-                       Button.url('Kanal 📣', 'https://t.me/FurkanS2err')
+                       Button.url('Kanal 📣', 'https://t.me/Tamistedigim')
                       ],
                     ),
                     link_preview=False)
