@@ -96,8 +96,8 @@ async def start(event):
                        Button.inline("📚 Commands", data="komutlar")
                       ],
                       [
-                       Button.url('➕ Gruba Ekle', 'https://t.me/JasmineTaggerBot?startgroup=a'),
-                       Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
+                       Button.url('➕ Add Group', 'https://t.me/JasmineTaggerBot?startgroup=a'),
+                       Button.url('Owner 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
                        Button.url('My Chat 💬', 'https://t.me/Alay57Chat')
@@ -120,7 +120,7 @@ async def handler(event):
                       ],
                       [
                        Button.url('Beni Gruba Ekle ✅', 'https://t.me/JasmineTaggerBot?startgroup=a'),
-                       Button.url('Sahibim 👤', 'https://t.me/iamZ3NT4')
+                       Button.url('Owner 👤', 'https://t.me/iamZ3NT4')
                       ],
                       [
                        Button.url('Support 🤝', 'https://t.me/JasmineSup')
@@ -136,7 +136,7 @@ async def handler(event):
                       Button.inline("📌 Etiket Komutları", data="etiketkomutlar")
                       ],
                       [
-                      Button.inline("⛔️ İşlemi Durdurma", data="islemidurdur"),
+                      Button.inline("⛔️ Command Stop", data="islemidurdur"),
                       Button.inline("✏️ Ping", data="pingpong")
                       ],
                       [
