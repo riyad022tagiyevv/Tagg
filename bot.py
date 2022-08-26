@@ -951,5 +951,5 @@ async def pingy(client, message):
 
 
 app.run()
-print(">> Bot Deploy Edildi @Yorgun_Birisi bilgi alabilirsin<<")
+print(">> Bot Deploy Edildi @iamZ3NT4 bilgi alabilirsin<<")
 client.run_until_disconnected()
