@@ -907,7 +907,7 @@ async def duyuru(event):
   await event.respond(f"Gönderildi.")
 
 
-@client.on(events.NewMessage(pattern="^/furkan$"))
+@client.on(events.NewMessage(pattern="^/Jasmine$"))
 async def start(event):
   await event.reply(f"** @JasmineTaggerBot Stats**", buttons=(
                       [
