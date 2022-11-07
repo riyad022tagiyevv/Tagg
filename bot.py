@@ -98,6 +98,7 @@ async def start(event):
                       [
                        Button.url('➕ Add Group', 'https://t.me/FearlessTaggerBot?startgroup=a'),
                        Button.url('Owner 👤', 'https://t.me/ByMorfin')
+
                       ],
                       [
                        Button.url('My Chat 💬', 'https://t.me/FearlessAslanlar')
@@ -121,6 +122,9 @@ async def handler(event):
                       [
                        Button.url('Me Add Group', 'https://t.me/FearlessTaggerBot?startgroup=a'),
                        Button.url('Owner 👤', 'https://t.me/ByMorfin')
+                      ]
+                      [
+                       Bittin.url('Sahip💂','https://t.me/GENCALFA
                       ],
                       [
                        Button.url('Support 🤝', 'https://t.me/FearlessChatTr')
