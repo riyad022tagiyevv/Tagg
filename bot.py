@@ -97,10 +97,7 @@ async def start(event):
                       ],
                       [
                        Button.url('➕ Add Group', 'https://t.me/FearlessTaggerBot?startgroup=a'),
-                       Button.url('Owner 👤', 'https://t.me/ByMorfin')
-                      ]
-                      [
-                       Button.url('sahip💂','https://t.me/GENCALFA')
+                       Button.url('Owner 👤', 'https://t.me/GENCALFA')
                       ],
                       [
                        Button.url('My Chat 💬', 'https://t.me/FearlessAslanlar')
