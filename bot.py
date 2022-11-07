@@ -91,16 +91,16 @@ async def start(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await client.send_message(-1001742841165, f"ℹ️ **Yeni Kullanıcı -** {ad}")
-     return await event.reply(f"💖😋 **Merhaba ben Jasmine Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
+     return await event.reply(f"💖😋 **Merhaba ben Fearless Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
                       [
                        Button.inline("📚 Commands", data="komutlar")
                       ],
                       [
-                       Button.url('➕ Add Group', 'https://t.me/JasmineTaggerBot?startgroup=a'),
-                       Button.url('Owner 👤', 'https://t.me/iamZ3NT4')
+                       Button.url('➕ Add Group', 'https://t.me/FearlessTaggerBot?startgroup=a'),
+                       Button.url('Owner 👤', 'https://t.me/ByMorfin')
                       ],
                       [
-                       Button.url('My Chat 💬', 'https://t.me/Alay57Chat')
+                       Button.url('My Chat 💬', 'https://t.me/FearlessAslanlar')
                       ],
                     ),
                     link_preview=False)
@@ -119,11 +119,11 @@ async def handler(event):
                        Button.inline("📚 Commands", data="komutlar")
                       ],
                       [
-                       Button.url('Me Add Group', 'https://t.me/JasmineTaggerBot?startgroup=a'),
-                       Button.url('Owner 👤', 'https://t.me/iamZ3NT4')
+                       Button.url('Me Add Group', 'https://t.me/FearlessTaggerBot?startgroup=a'),
+                       Button.url('Owner 👤', 'https://t.me/ByMorfin')
                       ],
                       [
-                       Button.url('Support 🤝', 'https://t.me/JasmineSup')
+                       Button.url('Support 🤝', 'https://t.me/FearlessChatTr')
                       ],
                     ),
                     link_preview=False)
@@ -909,7 +909,7 @@ async def duyuru(event):
 
 @client.on(events.NewMessage(pattern="^/Jasmine$"))
 async def start(event):
-  await event.reply(f"** @JasmineTaggerBot Stats**", buttons=(
+  await event.reply(f"** @FearlessTaggerBot Stats**", buttons=(
                       [
                        Button.inline("Stats", data="stats")
                       ],
@@ -951,5 +951,5 @@ async def pingy(client, message):
 
 
 app.run()
-print(">> Bot Deploy Edildi @iamZ3NT4 bilgi alabilirsin<<")
+print(">> Bot Deploy Edildi @ByMorfin bilgi alabilirsin<<")
 client.run_until_disconnected()
