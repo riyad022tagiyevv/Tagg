@@ -17,6 +17,10 @@
       "API_HASH": {
          "description": "my.telegram.org adresindən API HASH alın",
          "value": ""
+      },
+      "API_HASH": {
+         "description": "my.telegram.org adresindən API HASH alın",
+         "value": ""
       }
   },
   "buildpacks": [{
