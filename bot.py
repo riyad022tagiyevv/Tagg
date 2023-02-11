@@ -159,7 +159,7 @@ async def handler(event):
 async def handler(event):
     await event.edit(f"**/ping** \n- Pong", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="hel")
+                      Button.inline("◀️ Geri", data="help")
                       ],
                     ),
                     link_preview=False)
