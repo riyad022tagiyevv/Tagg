@@ -149,7 +149,7 @@ async def handler(event):
 async def handler(event):
     await event.edit(f"**/cancel veya /durdur** \n- Etiket İşlemini Durdurur", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="komutlar")
+                      Button.inline("◀️ Geri", data="help")
                       ],
                     ),
                     link_preview=False)
@@ -159,7 +159,7 @@ async def handler(event):
 async def handler(event):
     await event.edit(f"**/ping** \n- Pong", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="komutlar")
+                      Button.inline("◀️ Geri", data="hel")
                       ],
                     ),
                     link_preview=False)
@@ -169,7 +169,7 @@ async def handler(event):
 async def handler(event):
     await event.edit(f"**Not: Bu Komutları Sadece Botun Sahibi Kullanabilir** \n\n**/yolla < Mesajınız >** \n- Gruplara Reklam / Yayın Yapma \n\n**/stats** \n-Bot İstatiklerini Alır ", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="komutlar")
+                      Button.inline("◀️ Geri", data="help")
                       ],
                     ),
                     link_preview=False)
@@ -184,7 +184,7 @@ async def handler(event):
 async def handler(event):
     await event.edit(f"**/utag < Mesajınız >** \n- Üyelere 5 li Etiket Atar \n\n**/atag < Mesajınız >** \n- Gruptaki Sadece Adminleri Etiketler \n\n**/soztag < Mesajınız >** \n- Gruptaki Üyeleri Hoş Sözler İle Etiketler \n\n**/etag < Mesajınız >** \n- Gruptaki Üyeleri Emojiler İle Etiketler \n\n**/tektag < Mesajınız >** \n- Gruptaki Üyeleri Tek Tek Etiketler \n\n**/hiztag < Mesajınız >** \n- Gruptaki Kullanıcıları Aşırı Hızlı Bir Şekilde Etiketler \n\n\n**Bu Komutları Sadece Yöneticiler Kullanabilir....!**", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="komutlar")
+                      Button.inline("◀️ Geri", data="help")
                       ],
                     ),
                     link_preview=False)
