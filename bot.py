@@ -111,7 +111,7 @@ async def handler(event):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await event.edit(f"💖😋 **Merhaba ben Fearless Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
                       [
-                       Button.inline("📚 Commands", data="komutlar")
+                       Button.inline("📚 Commands", data="help")
                       ],
                       [
                        Button.url('Me Add Group', 'https://t.me/FearlessTaggerBot?startgroup=a'),
@@ -125,7 +125,7 @@ async def handler(event):
                     link_preview=False)
 
 # furkan
-@client.on(events.callbackquery.CallbackQuery(data="komutlar"))
+@client.on(events.callbackquery.CallbackQuery(data="help"))
 async def handler(event):
     await event.edit(f"__İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
                       [
@@ -401,7 +401,7 @@ async def pingy(client, message):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await hmm.edit(
-        f"█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄\n**Ping: {round(ms)}**")
+        f"█▀█ █ █▄░█ █▀▀ █ \n█▀▀ █ █░▀█ █▄█ ▄\n**Ping: {round(ms)}**")
     
 
 
