@@ -33,7 +33,7 @@ from pyrogram.errors import (
     UserIsBlocked,
 )
 from pyrogram import Client, filters, idle
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import pyrogram
 from datetime import datetime
 
