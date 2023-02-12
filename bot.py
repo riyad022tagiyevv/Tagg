@@ -183,7 +183,7 @@ async def handler(event):
     await event.edit(f"📊 [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) İn İstatisqası:\n\n🗂 Toplam Qrup Sayı: `{len(grup_sayi)}`\n📈 Aktiv Qrup Sayı: `{len(anlik_calisan)}`")
 
 
-@client.on(events.callbackquery.CallbackQuery(data="tag"))
+@client.on(events.callbackquery.CallbackQuery(data="taag"))
 async def handler(event):
     await event.edit(f"**/utag < Mesajınız >** \n- Üyelere 5 li Etiket Atar \n\n**/atag < Mesajınız >** \n- Gruptaki Sadece Adminleri Etiketler \n\n**/soztag < Mesajınız >** \n- Gruptaki Üyeleri Hoş Sözler İle Etiketler \n\n**/etag < Mesajınız >** \n- Gruptaki Üyeleri Emojiler İle Etiketler \n\n**/tektag < Mesajınız >** \n- Gruptaki Üyeleri Tek Tek Etiketler \n\n**/hiztag < Mesajınız >** \n- Gruptaki Kullanıcıları Aşırı Hızlı Bir Şekilde Etiketler \n\n\n**Bu Komutları Sadece Yöneticiler Kullanabilir....!**", buttons=(
                       [
@@ -399,9 +399,7 @@ async def _id(_, message: Message):
     await message.reply(out_str)
 	
 
-buttons = İnlineKeyboardMarkup([
-    [İnlineKeyboardButton("♻️ YENİLƏ", callback_data="yenile")]
-])
+
 @app.on_message(filters.command(["ping", "ms"]) & ~filters.edited)
 async def pingy(client, message):
     start = datetime.now()
@@ -411,15 +409,7 @@ async def pingy(client, message):
     await hmm.edit(
         f"█▀█ █ █▄░█ █▀▀ █ \n█▀▀ █ █░▀█ █▄█ ▄\n\n**🛰 Ping: {round(ms)}**", reply_markup=buttons)
   
-@app.on_callback_query(filters.regex("yenile")) 	
-async def yenile(_, query: CallbackQuery):
-    start = datetime.now()
-    hmm = await message.reply("🛰 **MS** HESABLANIR!")
-    end = datetime.now()
-    ms = (end - start).microseconds / 1000
-    await hmm.edit(
-        f"█▀█ █ █▄░█ █▀▀ █ \n█▀▀ █ █░▀█ █▄█ ▄\n\n**🛰 Ping: {round(ms)}**", reply_markup=buttons)
-    
+
 	
 	
 	
