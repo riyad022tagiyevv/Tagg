@@ -124,9 +124,10 @@ async def handler(event):
 
 
 @client.on(events.callbackquery.CallbackQuery(data="help"))
-async def handler(event):
+async def handler(event):	
+  ad = f"[{usr.first_name}](tg://user?id={usr.id}) " 
 	
-    await event.edit(f"__İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
+    await event.edit(f"{ad} İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
                       [
                       Button.inline("📌 TAĞ ƏMİRLƏRİ", data="tag"),
 		      Button.inline("⛔ PROSESİ FAYANDIRMA", data="dayan")
