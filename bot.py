@@ -185,8 +185,8 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="tag"))
 async def handler(event):
-    await event.edit(f"**/utag < Mesajınız >** \n- Üyelere 5 li Etiket Atar \n\n**/atag < Mesajınız >** \n- Gruptaki Sadece Adminleri Etiketler \n\n**/soztag < Mesajınız >** \n- Gruptaki Üyeleri Hoş Sözler İle Etiketler \n\n**/etag < Mesajınız >** \n- Gruptaki Üyeleri Emojiler İle Etiketler \n\n**/tektag < Mesajınız >** \n- Gruptaki Üyeleri Tek Tek Etiketler \n\n**/hiztag < Mesajınız >** \n- Gruptaki Kullanıcıları Aşırı Hızlı Bir Şekilde Etiketler \n\n\n**Bu Komutları Sadece Yöneticiler Kullanabilir....!**", buttons=(
-                      [
+    await event.edit(f"**📌 TAĞ ƏMİRLƏRİ**\n\n`/sehidler` - `  ŞƏHİD Adları İlə Tağ`\n`/tag` - `[SƏBƏB] - 5-Li Tağ Edər`\n`/etag` - `[SƏBƏB] - Emoji İlə Tağ`\n`/btag` - `[SƏBƏB] - Bayraq İlə Tag`\n`/mtag` - `[SƏBƏB] - Mafia Rolları İlə Tag`\n`/rtag` -  `[SƏBƏB] - Rayon və Şəhər adları İlə Tağ`\n`/htag` - `[SƏBƏB] - Heyvan Adları İlə Tağ`\n`/stag` - `Maraqlı Sözlərlə Tağ`\n`/ttag` - `[SƏBƏB] - Tək-Tək Tağ`\n`/admin` - `[SƏBƏB] - Adminləri Tağ`"
+		      [
                       Button.inline("◀️ Geri", data="help"), 
 		      Button.inline("🏠 ANA MEYNU", data="start")
                       ],
@@ -203,7 +203,7 @@ async def mentionalladmin(event):
     else:
       etiketuye.append(event.chat_id)
 
-@client.on(events.NewMessage(pattern="^/utag ?(.*)"))
+@client.on(events.NewMessage(pattern="^/tag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -271,8 +271,27 @@ async def mentionall(event):
     sender = await event.get_sender()
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Etiket İşlemi Başarıyla Tamamlandı !.\n\nEtiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}**")
+		
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
+async def cancel(event):
+  global anlik_calisan
+  anlik_calisan.remove(event.chat_id)
+  
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
 
-@client.on(events.NewMessage(pattern="^/tektag ?(.*)"))
+
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
+async def cancel(event):
+  global anlik_calisan
+  anlik_calisan.remove(event.chat_id)
+  
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
+
+		
+		
+		
+
+@client.on(events.NewMessage(pattern="^.ttag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -341,6 +360,21 @@ async def mentionall(event):
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Etiket İşlemi Başarıyla Tamamlandı !.\n\nEtiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}**")
 
+
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
+async def cancel(event):
+  global anlik_calisan
+  anlik_calisan.remove(event.chat_id)
+  
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
+
+
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
+async def cancel(event):
+  global anlik_calisan
+  anlik_calisan.remove(event.chat_id)
+  
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
 
     
   
