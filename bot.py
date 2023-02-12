@@ -366,9 +366,9 @@ async def duyuru(event):
   await event.respond(f"Gönderildi.")
 
 
-@client.on(events.NewMessage(pattern="^.stat.?(.*)"))
+@client.on(events.NewMessage(pattern="^.stats.?(.*)"))
 async def start(event):
-  await event.reply(f"** @FearlessTaggerBot Stats**", buttons=(
+  await event.reply(f"**📊 [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) -Un İstatiskası**", buttons=(
                       [
                        Button.inline("Stats", data="stats")
                       ],
@@ -380,21 +380,22 @@ async def hg(bot: Client, msg: Message):
     for new_user in msg.new_chat_members:
         if str(new_user.id) == str(BOT_ID):
             await msg.reply(
-                f'''`Hey` {msg.from_user.mention} `beni` {msg.chat.title} `grubuna eklediğin için teşekkürler⚡️`\n\n**Grublarda 50.000 Üyeye Kadar Bahsedebilirim ✨**''')
+                f'''**Hey** {msg.from_user.mention} **Məni** {msg.chat.title} **Qrupuna Aldığın Üçün Təşəkürlər**⚡️`\n\n**Qrublarda 50.000 Userə Qədər İnsanları Tağ Edə Bilərəm.\nDaha Çox Məlumat Üçün [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) - Ə PM də Start Verin**''')
 
         elif str(new_user.id) == str(OWNER_ID):
-            await msg.reply('**İşte bu gelen benim sahibim.**')
+            await msg.reply(
+		f'''**👮‍♂️ Bax Bu Gələn Mənim Sahibimdir**\n**👏 Sahibim {msg.chat.title} Qrupuna Xoş Gəldin''')
 
  
 @app.on_message(filters.command("id"))
 async def _id(_, message: Message):
     msg = message.reply_to_message or message
-    out_str = "**User İnfo:**\n"
-    out_str += f" 💬 __Grup ID__ : `{(msg.forward_from_chat or msg.chat).id}`\n"
-    out_str += f" 👤__Yanıtlanan Kullanıcı Adı__ : {msg.from_user.first_name}\n"
-    out_str += f" 💬 __Mesaj ID__ : `{msg.forward_from_message_id}`\n"
+    out_str = "**User MƏLUMATI:**\n"
+    out_str += f"**🆔️ Grup ID:** `{(msg.forward_from_chat or msg.chat).id}`\n"
+    out_str += f"**🔗👤 Yanıtlanan Kullanıcı Adı:** {msg.from_user.first_name}\n"
+    out_str += f"**💬🆔️ Mesaj ID:** `{msg.forward_from_message_id}`\n"
     if msg.from_user:
-        out_str += f" 🙋🏻‍♂️ __Yanıtlanan Kullanıcı ID__ : `{msg.from_user.id}`\n"
+        out_str += f"**👤🆔️ Yanıtlanan Kullanıcı ID:** `{msg.from_user.id}`\n"
  
     await message.reply(out_str)
 	
