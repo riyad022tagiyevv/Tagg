@@ -131,7 +131,7 @@ async def handler(event):
     await event.edit(f"{ad}\n⚙ Əmorlər Bölümünə Xoş Gəldin.\n💡 İsdədiyiniz Əmirlə Tanış Olmaq Üçün Aşaqdakı Buttonlara Toxun 👇**", buttons=(
                       [
                       Button.inline("📌 TAĞ ƏMİRLƏRİ", data="tag"),
-		      Button.inline("⛔ PROSESİ FAYANDIRMA", data="dayan")
+		      Button.inline("⛔ PROSESİ DAYANDIRMA", data="dayan")
                       ],
                       [
                       Button.inline("💡 DİGƏR ƏMİRLƏR", data="diger"),
@@ -169,7 +169,7 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="sahib"))
 async def handler(event):
-    await event.edit(f"**👮‍♂️ Sahib Əmorləri:**\n\n• `/yolla` `Qrupda Reklam Edər`\n• `/stat` [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) `İn İstatikası`\n• `/pin` - `Bir Mesajı Pin Edər`\n• `/unpin` - `Sabitlənmiş Medajı Silər`", buttons=(
+    await event.edit(f"**👮‍♂️ Sahib Əmorləri:**\n\n• `/yolla` - `Qrupda Reklam Edər`\n• `/stat` - [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) `İn İstatikası`\n• `/pin` - `Bir Mesajı Pin Edər`\n• `/unpin` - `Sabitlənmiş Medajı Silər`", buttons=(
                       [
                       Button.inline("◀️ Geri", data="help"),
 		      Button.inline("🏠 ANA MEYNU", data="start")
