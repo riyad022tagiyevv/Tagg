@@ -400,7 +400,7 @@ async def _id(_, message: Message):
 	
 
 
-@app.on_message(filters.command(["ping", "ms"]) & ~filters.edited)
+@app.on_message(filters.command(["ping", "ms"]))
 async def pingy(client, message):
     start = datetime.now()
     hmm = await message.reply("🛰 **MS** HESABLANIR!")
