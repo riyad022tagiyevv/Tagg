@@ -69,20 +69,20 @@ rxyzdev_initT = {}
 
 
 
-@client.on(events.NewMessage(pattern='^(?i)/cancel'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
   
-  if event.chat_id in rxyzdev_tagTot:await event.respond(f"❌**Etiket işlemi durduruldu.\n\n Etiketlerin Sayı: {rxyzdev_tagTot[event.chat_id]}**")
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
 
 
-@client.on(events.NewMessage(pattern='^(?i)/durdur'))
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
   
-  if event.chat_id in rxyzdev_tagTot:await event.respond(f"❌**Etiket işlemi durduruldu.\n\n Etiketlerin Sayı: {rxyzdev_tagTot[event.chat_id]}**")
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
 
 
 @client.on(events.NewMessage(pattern="^/start$"))
@@ -93,50 +93,47 @@ async def start(event):
   await event.reply(f"**👋 Salam {ad}\nMən  𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ**\n**𝕏𝔸𝕆𝕊 Federasiyasının Rəsmi Tağ botuyam**\n**⚡ 𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm**\n**Əmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun**\n**ℹ Mənim Qruplarda Asan Və Sürətli İşləyə Bilməyim Üçün Mənə Qrupunuzda Sadə Adminlik Vermənizi Rica Edirem**",
                     buttons=(
 			    
-		              [Button.url('➕ ℚℝ𝕌ℙ𝔸 𝔼𝕃𝔸𝕍𝔼 𝔼𝕋 ➕', 'https://t.me/XAOS_Tagbot?startgroup=a'),
+		      [Button.url('➕ ℚℝ𝕌ℙ𝔸 𝔼𝕃𝔸𝕍𝔼 𝔼𝕋 ➕', 'https://t.me/XAOS_Tagbot?startgroup=a'),
                       Button.url('⚡ 𝕏𝔸𝕆𝕊 𝔽𝔹𝔸ℕ', f'https://t.me/XaosResmii')],
-                      [Button.url('🇦🇿 𝕆𝕎ℕ𝔼ℝ 👨‍💻', f'https://t.me/sesizKOLGE')],
+                      Button.url('🇦🇿 𝕆𝕎ℕ𝔼ℝ 👨‍💻', f'https://t.me/sesizKOLGE'),
                       [Button.inline("⚙ Ə𝕄ℝ𝕃Əℝ", data="help")],
                     ),
                     link_preview=False
 		   )
 
   if event.is_group:
-    return await client.send_message(event.chat_id, f"**Grubunuzda Spam Yapmak istemiyorum Lütfen Komutlarıma Özel Mesajdan Bakın**🤗")
+    return await client.send_message(event.chat_id, f"**Qrubunuzda Spam Eləmək İsdəmirəm. Xahiş Edirəm [Əmirlərimə](https://t.me/XAOS_Tagbot) Özəl Mesajdan Baxın**🤗")
 
 # Başlanğıc Button
 @client.on(events.callbackquery.CallbackQuery(data="start"))
 async def handler(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await event.edit(f"💖😋 **Merhaba ben Fearless Tagger Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
-                      [
-                       Button.inline("📚 Commands", data="help")
-                      ],
-                      [
-                       Button.url('Me Add Group', 'https://t.me/FearlessTaggerBot?startgroup=a'),
-                       Button.url('Owner 👤', 'https://t.me/ByMorfin')
-                    
-                      ],
-                      [
-                       Button.url('Support 🤝', 'https://t.me/FearlessChatTr')
-                      ],
+  await event.reply(f"**👋 Salam {ad}\nMən  𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ**\n**𝕏𝔸𝕆𝕊 Federasiyasının Rəsmi Tağ botuyam**\n**⚡ 𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm**\n**Əmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun**\n**ℹ Mənim Qruplarda Asan Və Sürətli İşləyə Bilməyim Üçün Mənə Qrupunuzda Sadə Adminlik Vermənizi Rica Edirem**",
+                    buttons=(
+			    
+		      [Button.url('➕ ℚℝ𝕌ℙ𝔸 𝔼𝕃𝔸𝕍𝔼 𝔼𝕋 ➕', 'https://t.me/XAOS_Tagbot?startgroup=a'),
+                      Button.url('⚡ 𝕏𝔸𝕆𝕊 𝔽𝔹𝔸ℕ', f'https://t.me/XaosResmii')],
+                      Button.url('🇦🇿 𝕆𝕎ℕ𝔼ℝ 👨‍💻', f'https://t.me/sesizKOLGE'),
+                      [Button.inline("⚙ Ə𝕄ℝ𝕃Əℝ", data="help")],
                     ),
-                    link_preview=False)
+                    link_preview=False
+		   )
 
 # furkan
 @client.on(events.callbackquery.CallbackQuery(data="help"))
 async def handler(event):
+	
     await event.edit(f"__İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
                       [
-                      Button.inline("📌 Label Commands", data="etiketkomutlar")
+                      Button.inline("📌 TAĞ ƏMİRLƏRİ", data="tag")
                       ],
                       [
-                      Button.inline("⛔️ Process Stop", data="islemidurdur"),
-                      Button.inline("✏️ Ping", data="pingpong")
+                      Button.inline("⛔️ PROSESİ DAYANDIRMA", data="dayan"),
+                      Button.inline("🛰 Ping", data="ping")
                       ],
                       [
-                      Button.inline("Owner Commands 📚", data="kullanici")
+                      Button.inline("👮‍♂️ SAHİB ƏMİRLƏRİ", data="sahib"), Button.inline("💡 DİGƏR ƏMİRLƏR", data="digər")
                       ],
                       [
                       Button.inline("◀️ Geri", data="start")
@@ -145,7 +142,7 @@ async def handler(event):
                     link_preview=False)
 
 
-@client.on(events.callbackquery.CallbackQuery(data="islemidurdur"))
+@client.on(events.callbackquery.CallbackQuery(data="dayan"))
 async def handler(event):
     await event.edit(f"**/cancel veya /durdur** \n- Etiket İşlemini Durdurur", buttons=(
                       [
