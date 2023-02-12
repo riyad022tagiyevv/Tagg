@@ -147,7 +147,7 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="dayan"))
 async def handler(event):
-    await event.edit(f"**📌 Tağ Prosesin Dayandırmaq Üçün:**\n\n• `/cancel`\n• ` /dayan`", buttons=(
+    await event.edit(f"**📌 Tağ Prosesin Dayandırmaq Üçün:**\n\n• `/cancel`\n• `/dayan`", buttons=(
                       [
                       Button.inline("◀️ Geri", data="help"), 
 		      Button.inline("🏠 ANA MEYNU", data="start")
@@ -158,7 +158,7 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="diger"))
 async def handler(event):
-    await event.edit(f"**🛰 Botun MS İni Və PİNG Dəyərini Ölçmək Üçün\n\n• `/ping`\n• `/ms`", buttons=(
+    await event.edit(f"**🛰 Botun MS İni Və PİNG Dəyərini Ölçmək Üçün:**\n\n• `/ping`\n• `/ms`", buttons=(
                       [
                       Button.inline("◀️ Geri", data="help"), 
 		      Button.inline("🏠 ANA MEYNU", data="start")
@@ -169,9 +169,10 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="sahib"))
 async def handler(event):
-    await event.edit(f"**Not: Bu Komutları Sadece Botun Sahibi Kullanabilir** \n\n**/yolla < Mesajınız >** \n- Gruplara Reklam / Yayın Yapma \n\n**/stats** \n-Bot İstatiklerini Alır ", buttons=(
+    await event.edit(f"**👮‍♂️ Sahib Əmorləri:**\n\n• `/yolla` `Qrupda Reklam Edər`\n• `/stat` [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) `İn İstatikası`\n• `/pin` - `Bir Mesajı Pin Edər`\n• `/unpin` - `Sabitlənmiş Medajı Silər`", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="help")
+                      Button.inline("◀️ Geri", data="help"),
+		      Button.inline("🏠 ANA MEYNU", data="start")
                       ],
                     ),
                     link_preview=False)
@@ -179,14 +180,15 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="stats"))
 async def handler(event):
-    await event.edit(f"**@JasmineTaggerBot İstatistikleri **\n\nToplam Grup: `{len(grup_sayi)}`\nAnlık Çalışan Grup: `{len(anlik_calisan)}`")
+    await event.edit(f"📊 [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) İn İstatisqası:\n\n🗂 Toplam Qrup Sayı: `{len(grup_sayi)}`\n📈 Aktiv Qrup Sayı: `{len(anlik_calisan)}`")
 
 
-@client.on(events.callbackquery.CallbackQuery(data="etiketkomutlar"))
+@client.on(events.callbackquery.CallbackQuery(data="tag"))
 async def handler(event):
     await event.edit(f"**/utag < Mesajınız >** \n- Üyelere 5 li Etiket Atar \n\n**/atag < Mesajınız >** \n- Gruptaki Sadece Adminleri Etiketler \n\n**/soztag < Mesajınız >** \n- Gruptaki Üyeleri Hoş Sözler İle Etiketler \n\n**/etag < Mesajınız >** \n- Gruptaki Üyeleri Emojiler İle Etiketler \n\n**/tektag < Mesajınız >** \n- Gruptaki Üyeleri Tek Tek Etiketler \n\n**/hiztag < Mesajınız >** \n- Gruptaki Kullanıcıları Aşırı Hızlı Bir Şekilde Etiketler \n\n\n**Bu Komutları Sadece Yöneticiler Kullanabilir....!**", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="help")
+                      Button.inline("◀️ Geri", data="help"), 
+		      Button.inline("🏠 ANA MEYNU", data="start")
                       ],
                     ),
                     link_preview=False)
@@ -396,10 +398,10 @@ async def _id(_, message: Message):
  
     await message.reply(out_str)
 
-@app.on_message(filters.command("ping, ms"))
+@app.on_message(filters.command(["ping", "ms"]))
 async def pingy(client, message):
     start = datetime.now()
-    hmm = await message.reply("Pong!")
+    hmm = await message.reply("🛰 **MS** HESABLANIR!")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await hmm.edit(
