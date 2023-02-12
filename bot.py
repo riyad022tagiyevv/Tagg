@@ -128,7 +128,7 @@ async def handler(event):
   if event.is_private:
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-    await event.edit(f"{ad} İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
+    await event.edit(f"{ad}\n⚙ Əmorlər Bölümünə Xoş Gəldin.\n💡 İsdədiyiniz Əmirlə Tanış Olmaq Üçün Aşaqdakı Buttonlara Toxun 👇**", buttons=(
                       [
                       Button.inline("📌 TAĞ ƏMİRLƏRİ", data="tag"),
 		      Button.inline("⛔ PROSESİ FAYANDIRMA", data="dayan")
@@ -138,7 +138,8 @@ async def handler(event):
                       Button.inline("👮‍♂️ SAHİB ƏMİRLƏRİ", data="sahib")
                       ],
                       [
-                      Button.inline("◀️ Geri", data="start")
+                      Button.inline("ℹ  İNFO", data="info"),
+		      Button.inline("◀️ Geri", data="start")
                       ],
                     ),
                     link_preview=False)
@@ -146,9 +147,10 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="dayan"))
 async def handler(event):
-    await event.edit(f"**/cancel Və Ya /durdur** \n- Etiket İşlemini Durdurur", buttons=(
+    await event.edit(f"**📌 Tağ Prosesin Dayandırmaq Üçün:**\n\n• `/cancel`\n• ` /dayan`", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="help")
+                      Button.inline("◀️ Geri", data="help"), 
+		      Button.inline("🏠 ANA MEYNU", data="start")
                       ],
                     ),
                     link_preview=False)
@@ -156,9 +158,10 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="diger"))
 async def handler(event):
-    await event.edit(f"**/ping** \n- Pong", buttons=(
+    await event.edit(f"**🛰 Botun MS İni Və PİNG Dəyərini Ölçmək Üçün\n\n• `/ping`\n• `/ms`", buttons=(
                       [
-                      Button.inline("◀️ Geri", data="help")
+                      Button.inline("◀️ Geri", data="help"), 
+		      Button.inline("🏠 ANA MEYNU", data="start")
                       ],
                     ),
                     link_preview=False)
@@ -393,7 +396,7 @@ async def _id(_, message: Message):
  
     await message.reply(out_str)
 
-@app.on_message(filters.command("ping"))
+@app.on_message(filters.command("ping, ms"))
 async def pingy(client, message):
     start = datetime.now()
     hmm = await message.reply("Pong!")
