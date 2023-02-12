@@ -400,7 +400,7 @@ async def _id(_, message: Message):
 	
 
 buttons = İnlineKeyboardMarkup([
-    [İnlineKeyboardButton("♻️ YENİLƏ", callback_data="yenile"])
+    [İnlineKeyboardButton("♻️ YENİLƏ", callback_data="yenile")]
 ])
 @app.on_message(filters.command(["ping", "ms"]) & ~filters.edited)
 async def pingy(client, message):
