@@ -85,29 +85,13 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
 
 
-@client.on(events.NewMessage(pattern="^/start$"))
-async def start(event):
-  if event.is_private:
-    async for usr in client.iter_participants(event.chat_id):
-     ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-  await event.reply(f"**👋 Salam {ad}\nMən  𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ**\n**𝕏𝔸𝕆𝕊 Federasiyasının Rəsmi Tağ botuyam**\n**⚡ 𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm**\n**Əmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun**\n**ℹ Mənim Qruplarda Asan Və Sürətli İşləyə Bilməyim Üçün Mənə Qrupunuzda Sadə Adminlik Vermənizi Rica Edirem**",
-                    buttons=(
-			    
-		             [Button.url('➕ ℚℝ𝕌ℙ𝔸 𝔼𝕃𝔸𝕍𝔼 𝔼𝕋 ➕', 'https://t.me/XAOS_Tagbot?startgroup=a'),
-                      Button.url('⚡ 𝕏𝔸𝕆𝕊 𝔽𝔹𝔸ℕ', f'https://t.me/XaosResmii')],
-                      Button.url('🇦🇿 𝕆𝕎ℕ𝔼ℝ 👨‍💻', f'https://t.me/sesizKOLGE'),
-                      [Button.inline("⚙ Ə𝕄ℝ𝕃Əℝ", data="help")],
-                    ),
-                    link_preview=False
-		   )
-
-  if event.is_group:
-    return await client.send_message(event.chat_id, f"**Qrubunuzda Spam Eləmək İsdəmirəm. Xahiş Edirəm [Əmirlərimə](https://t.me/XAOS_Tagbot) Özəl Mesajdan Baxın**🤗")
 
 # Başlanğıc Button
 
 # furkan
-@client.on(events.callbackquery.CallbackQuery(data="help"))
+
+
+@client.on(events.NewMessage(pattern="^/start$"))
 async def handler(event):
 	
     await event.edit(f"__İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
