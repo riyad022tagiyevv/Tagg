@@ -126,14 +126,12 @@ async def handler(event):
 	
     await event.edit(f"__İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
                       [
-                      Button.inline("📌 TAĞ ƏMİRLƏRİ", data="tag")
+                      Button.inline("📌 TAĞ ƏMİRLƏRİ", data="tag"),
+		      Button.inline("⛔ PROSESİ FAYANDIRMA", data="dayan")
                       ],
                       [
-                      Button.inline("⛔️ PROSESİ DAYANDIRMA", data="dayan"),
-                      Button.inline("🛰 Ping", data="ping")
-                      ],
-                      [
-                      Button.inline("👮‍♂️ SAHİB ƏMİRLƏRİ", data="sahib"), Button.inline("💡 DİGƏR ƏMİRLƏR", data="digər")
+                      Button.inline("💡 DİGƏR ƏMİRLƏR", data="diger"),
+                      Button.inline("👮‍♂️ SAHİB ƏMİRLƏRİ", data="sahib")
                       ],
                       [
                       Button.inline("◀️ Geri", data="start")
@@ -144,7 +142,7 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="dayan"))
 async def handler(event):
-    await event.edit(f"**/cancel veya /durdur** \n- Etiket İşlemini Durdurur", buttons=(
+    await event.edit(f"**/cancel Və Ya /durdur** \n- Etiket İşlemini Durdurur", buttons=(
                       [
                       Button.inline("◀️ Geri", data="help")
                       ],
