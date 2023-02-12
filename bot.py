@@ -185,7 +185,7 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="tag"))
 async def handler(event):
-    await event.edit(f"**📌 TAĞ ƏMİRLƏRİ**\n\n`/sehidler` - `  ŞƏHİD Adları İlə Tağ`\n`/tag` - `[SƏBƏB] - 5-Li Tağ Edər`\n`/etag` - `[SƏBƏB] - Emoji İlə Tağ`\n`/btag` - `[SƏBƏB] - Bayraq İlə Tag`\n`/mtag` - `[SƏBƏB] - Mafia Rolları İlə Tag`\n`/rtag` -  `[SƏBƏB] - Rayon və Şəhər adları İlə Tağ`\n`/htag` - `[SƏBƏB] - Heyvan Adları İlə Tağ`\n`/stag` - `Maraqlı Sözlərlə Tağ`\n`/ttag` - `[SƏBƏB] - Tək-Tək Tağ`\n`/admin` - `[SƏBƏB] - Adminləri Tağ`"
+    await event.edit(f"**📌 TAĞ ƏMİRLƏRİ**\n\n`/sehidler` - `  ŞƏHİD Adları İlə Tağ`\n`/tag` - `[SƏBƏB] - 5-Li Tağ Edər`\n`/etag` - `[SƏBƏB] - Emoji İlə Tağ`\n`/btag` - `[SƏBƏB] - Bayraq İlə Tag`\n`/mtag` - `[SƏBƏB] - Mafia Rolları İlə Tag`\n`/rtag` -  `[SƏBƏB] - Rayon və Şəhər adları İlə Tağ`\n`/htag` - `[SƏBƏB] - Heyvan Adları İlə Tağ`\n`/stag` - `Maraqlı Sözlərlə Tağ`\n`/ttag` - `[SƏBƏB] - Tək-Tək Tağ`\n`/admin` - `[SƏBƏB] - Adminləri Tağ`", buttons=(
 		      [
                       Button.inline("◀️ Geri", data="help"), 
 		      Button.inline("🏠 ANA MEYNU", data="start")
