@@ -397,17 +397,32 @@ async def _id(_, message: Message):
         out_str += f" 🙋🏻‍♂️ __Yanıtlanan Kullanıcı ID__ : `{msg.from_user.id}`\n"
  
     await message.reply(out_str)
+	
 
-@app.on_message(filters.command(["ping", "ms"]))
+buttons = İnlineKeyboardMarkup([
+    [İnlineKeyboardButton("♻️ YENİLƏ", callback_data="yenile"])
+])
+@app.on_message(filters.command(["ping", "ms"]) & ~filters.edited)
 async def pingy(client, message):
     start = datetime.now()
     hmm = await message.reply("🛰 **MS** HESABLANIR!")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await hmm.edit(
-        f"█▀█ █ █▄░█ █▀▀ █ \n█▀▀ █ █░▀█ █▄█ ▄\n**Ping: {round(ms)}**")
+        f"█▀█ █ █▄░█ █▀▀ █ \n█▀▀ █ █░▀█ █▄█ ▄\n\n**🛰 Ping: {round(ms)}**", reply_markup=buttons)
+  
+@app.on_callback_query(filters.regex("yenile")) 	
+async def yenile(_, query: CallbackQuery):
+    start = datetime.now()
+    hmm = await message.reply("🛰 **MS** HESABLANIR!")
+    end = datetime.now()
+    ms = (end - start).microseconds / 1000
+    await hmm.edit(
+        f"█▀█ █ █▄░█ █▀▀ █ \n█▀▀ █ █░▀█ █▄█ ▄\n\n**🛰 Ping: {round(ms)}**", reply_markup=buttons)
     
-
+	
+	
+	
 
 app.run()
 print(">> Bot Deploy Edildi @ByMorfin bilgi alabilirsin<<")
