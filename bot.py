@@ -125,7 +125,8 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="help"))
 async def handler(event):	
-  async for usr in client.iter_participants(event.chat_id):
+  if event.is_private:
+    async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
     await event.edit(f"{ad} İşte Bu Botun Komutlar Menüsü__\n\n**Buttonlardan Komutlara Baka Bilirsiz**", buttons=(
                       [
