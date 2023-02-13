@@ -195,7 +195,7 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="info"))
 async def handler(event):
-    await event.edit(f"ℹ  __**İNFO**__\n\n☞︎︎︎ **Şəhid Adları İlə Tağ**\n☞︎︎︎ **5-Li Tağ**\n☞︎︎︎ **Emojilərlə Tağ**\n☞︎︎︎ **Heyvan Adları İlə Tağ**\n☞︎︎︎ **Bayraqlarla Tağ Edər**\n☞︎︎︎ **Mafia Rolları İlə Tağ**\n☞︎︎︎ **Rayon Və Şəhər Adları İlə Tağ**\n☞︎︎︎ **Təkli Tağ**\n☞︎︎︎ **Maraqlı Sözlərlə Tağ**\n☞︎︎︎  **Yalnız Admimləri Tağ**\n☞︎︎︎ **Maraqlı Temalar**\n☞︎︎︎ **Qrup Və Öz İD Niz**\n☞︎︎︎ **İstənilən Mesajı Sabitləyin**\n☞︎︎︎ **İstənilən Mesaji Sabitdən Silin**\n☞︎︎︎ **Botun MS dəyərin Ölçmək\n☞︎︎︎ **Botun Statiskası**", buttons=(
+    await event.edit(f"ℹ  __**İNFO**__\n\n☞︎︎︎ **Şəhid Adları İlə Tağ**\n☞︎︎︎ **5-Li Tağ**\n☞︎︎︎ **Emojilərlə Tağ**\n☞︎︎︎ **Heyvan Adları İlə Tağ**\n☞︎︎︎ **Bayraqlarla Tağ Edər**\n☞︎︎︎ **Mafia Rolları İlə Tağ**\n☞︎︎︎ **Rayon Və Şəhər Adları İlə Tağ**\n☞︎︎︎ **Təkli Tağ**\n☞︎︎︎ **Maraqlı Sözlərlə Tağ**\n☞︎︎︎  **Yalnız Admimləri Tağ**\n☞︎︎︎ **Maraqlı Temalar**\n☞︎︎︎ **Qrup Və Öz İD Niz**\n☞︎︎︎ **İstənilən Mesajı Sabitləyin**\n☞︎︎︎ **İstənilən Mesaji Sabitdən Silin**\n☞︎︎︎ **Botun MS dəyərin Ölçmək**\n☞︎︎︎ **Botun Statiskası**", buttons=(
 
 		      [
                       Button.inline("◀️ Geri", data="help"), 
