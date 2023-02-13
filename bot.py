@@ -61,6 +61,14 @@ app = Client("GUNC",
              bot_token=bot_token
              )
 
+teletips = Client("XAOS",
+             api_id=api_id,
+             api_hash=api_hash,
+             bot_token=bot_token
+             )
+
+
+
 anlik_calisan = []
 
 ozel_list = [2074934667]
@@ -476,7 +484,25 @@ async def delAcc(client, msj):
     await app.send_message(chat_id, f"{shesablar}\n\n🗑 Silinen hesablarin sayi - {len(DELETED)}")	
 	
 	
-	
+@teletips.on_message(filters.command("bots"))
+async def bots(client, message):  
+  try:    
+    botList = []
+    async for bot in teletips.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.BOTS):
+      botList.append(bot.user)
+    lenBotList = len(botList) 
+    text3  = f"**BOT LIST** - `{message.chat.title}`\n\n🤖 __Bots__\n"
+    while len(botList) > 1:
+      bot = botList.pop(0)
+      text3 += f"├ @{bot.username}\n"    
+    else:    
+      bot = botList.pop(0)
+      text3 += f"└ @{bot.username}\n\n"
+      text3 += f"✅ | **Botların ümumi sayı**: {lenBotList}"  
+      await teletips.send_message(message.chat.id, text3)
+  except FloodWait as e:
+    await asyncio.sleep(e.value)
+ 
 	
 	
 @app.on_message(filters.command(["admins","ytlist"]))
@@ -527,6 +553,64 @@ async def admins(client, message):
 	
 	
 
+	
+	
+@teletips.on_message(filters.command(["remove","sil"]))
+async def remove(client, message):
+  global stopProcess
+  try: 
+    try:
+      sender = await teletips.get_chat_member(message.chat.id, message.from_user.id)
+      has_permissions = sender.privileges
+    except:
+      has_permissions = message.sender_chat  
+    if has_permissions:
+      bot = await teletips.get_chat_member(message.chat.id, "self")
+      if bot.status == ChatMemberStatus.MEMBER:
+        await message.reply("🕹 | Silinmiş hesabları silmək üçün mənə admin icazələri lazımdır.")  
+      else:  
+        if len(chatQueue) > 5 :
+          await message.reply("⛔️ | Hazırda maksimum 5 söhbətim üzərində işləyirəm. Lütfən, tezliklə yenidən cəhd edin.")
+        else:  
+          if message.chat.id in chatQueue:
+            await message.reply("🚫 | Bu çatda artıq davam edən proses var. Yenisini başlamaq üçün zəhmət olmasa /stop vəya /cancel əmrini işlədin.")
+          else:  
+            chatQueue.append(message.chat.id)  
+            deletedList = []
+            async for member in teletips.get_chat_members(message.chat.id):
+              if member.user.is_deleted == True:
+                deletedList.append(member.user)
+              else:
+                pass
+            lenDeletedList = len(deletedList)  
+            if lenDeletedList == 0:
+              await message.reply("👻 | Bu söhbətdə silinmiş hesab yoxdur.")
+              chatQueue.remove(message.chat.id)
+            else:
+              k = 0
+              processTime = lenDeletedList*10
+              temp = await teletips.send_message(message.chat.id, f"🚨 | Cəmi {lenDeletedList} silinmiş hesablar aşkar edildi.\n⏳ | Təxmini vaxt: {processTime} saniyə.")
+              if stopProcess: stopProcess = False
+              while len(deletedList) > 0 and not stopProcess:   
+                deletedAccount = deletedList.pop(0)
+                try:
+                  await teletips.ban_chat_member(message.chat.id, deletedAccount.id)
+                except Exception:
+                  pass  
+                k+=1
+                await asyncio.sleep(10)
+              if k == lenDeletedList:  
+                await message.reply(f"✅ | Bütün silinmiş hesablar bu söhbətdən uğurla silindi.")  
+                await temp.delete()
+              else:
+                await message.reply(f"✅ | {k} silinmiş hesab bu söhbətdən uğurla silindi.")  
+                await temp.delete()  
+              chatQueue.remove(message.chat.id)
+    else:
+      await message.reply("👮🏻 | Üzr istəyirik, **yalnız adminlər** bu əmri yerinə yetirə bilər.")  
+  except FloodWait as e:
+    await asyncio.sleep(e.value)                               
+	
 
             
 	
