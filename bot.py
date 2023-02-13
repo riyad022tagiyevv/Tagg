@@ -554,7 +554,7 @@ async def admins(client, message):
   except FloodWait as e:
     await asyncio.sleep(e.value)
 	
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="➕ QRUPA ƏLAVƏ ET➕", "https://t.me/XAOS_Tagbot?startgroup=a")]])
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="➕ QRUPA ƏLAVƏ ET➕", url=f"https://t.me/XAOS_Tagbot?startgroup=a")]])
  	
  
 
