@@ -476,7 +476,7 @@ async def delAcc(client, msj):
             DELETED.append(str(m.user.id)) # silinen hesablar
 
     shesablar = '\n'.join(DELETED) 
-    await app.send_message(chat_id, f"{shesablar}\n\n🗑 Silinen hesablarin sayi - {len(DELETED)}")	
+    await app.send_message(chat_id, f"{shesablar}\n\n🗑 Silinən hesabların sayı - {len(DELETED)}")	
 	
 	
 @app.on_message(filters.command("bots"))
@@ -486,7 +486,7 @@ async def bots(client, message):
     async for bot in app.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.BOTS):
       botList.append(bot.user)
     lenBotList = len(botList) 
-    text3  = f"**BOT LIST** - `{message.chat.title}`\n\n🤖 __Bots__\n"
+    text3  = f"{message.chat.title} - **QURUPUNDAKI BOTLAR**\n\n🤖 __Bots__\n"
     while len(botList) > 1:
       bot = botList.pop(0)
       text3 += f"├ @{bot.username}\n"    
@@ -516,7 +516,7 @@ async def admins(client, message):
       else:
         pass   
     lenAdminList= len(ownerList) + len(adminList)  
-    text2 = f"👮‍♂️ QRIP İDARƏÇİLƏRİ - {message.chat.title}\n\n"
+    text2 = f"👮‍♂️ QRUP İDARƏÇİLƏRİ - {message.chat.title}\n\n"
     try:
       owner = ownerList[0]
       if owner.username == None:
