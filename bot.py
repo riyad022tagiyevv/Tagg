@@ -41,8 +41,18 @@ from datetime import datetime
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
  
 
+async def is_administrator(user_id: int, message):
+    admin = False
+    async for user in client.iter_participants(message.chat_id,
+                             filter=ChannelParticipantsAdmins):
+        if user_id == user.id or user_id in SUDO_USERS:
+            admin = True
+            break
+    return admin
 
-
+	
+	
+	
 
 logging.basicConfig(
     level=logging.INFO,
