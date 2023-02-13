@@ -479,12 +479,12 @@ async def delAcc(client, msj):
 	
 	
 	
-@teletips.on_message(filters.command(["admins","staff"]))
+@app.on_message(filters.command(["admins","staff"]))
 async def admins(client, message):
   try: 
     adminList = []
     ownerList = []
-    async for admin in teletips.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
+    async for admin in app.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
       if admin.privileges.is_anonymous == False:
         if admin.user.is_bot == True:
           pass
@@ -506,7 +506,7 @@ async def admins(client, message):
       text2 += f"👑 Owner\n└ <i>Hidden</i>\n\n👮🏻 Admins\n"
     if len(adminList) == 0:
       text2 += "└ <i>Admins are hidden</i>"  
-      await teletips.send_message(message.chat.id, text2)   
+      await app.send_message(message.chat.id, text2)   
     else:  
       while len(adminList) > 1:
         admin = adminList.pop(0)
@@ -521,7 +521,7 @@ async def admins(client, message):
         else:
           text2 += f"└ @{admin.username}\n\n"
       text2 += f"✅ | Total number of admins: {lenAdminList}\n❌ | Bots and hidden admins were rejected."  
-      await teletips.send_message(message.chat.id, text2)           
+      await app.send_message(message.chat.id, text2)           
   except FloodWait as e:
     await asyncio.sleep(e.value)
 	
