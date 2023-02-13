@@ -554,20 +554,20 @@ async def admins(client, message):
   except FloodWait as e:
     await asyncio.sleep(e.value)
 	
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="SOURCE", url=f"https://github.com/vivek-tp/Info-Bot")]])
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="➕ QRUPA ƏLAVƏ ET➕", "https://t.me/XAOS_Tagbot?startgroup=a")]])
  	
  
 
 @app.on_message(filters.command(["info", "me"]))
 async def info(bot, update):
     
-    text = f"""--**Information**--
+    text = f"""  **ℹ MƏLUMAT**
  
-**🙋🏻‍♂️ First Name :** {update.from_user.first_name}
-**🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
-**🧑🏻‍🎓 Your Username :** {update.from_user.username}
-**🆔 Your Telegram ID :** {update.from_user.id}
-**🔗 Your Profile Link :** {update.from_user.mention}"""
+**🙋🏻‍♂️ İsdifadəçi Adı:** {update.from_user.first_name}
+**🧖‍♂️ İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
+**🗒  Kulanıcı Adı :** @{update.from_user.username}
+**🆔 Telegram ID :** `{update.from_user.id}`
+**🖇 Profil Linki :** {msg.from_user.mention}"""
     
     await update.reply_text(        
         text=text,
