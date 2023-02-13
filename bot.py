@@ -464,7 +464,7 @@ async def pingy(client, message):
 	
 	
 
-@app.on_message(filters.command(["rev",."clean"]))
+@app.on_message(filters.command(["rev", "clean"]))
 async def remove(client, message):
   global stopProcess
   try: 
