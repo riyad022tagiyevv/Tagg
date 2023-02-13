@@ -221,13 +221,13 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**Bu Komut Sadace Grublarda ve Kanallarda Kullanıma Bilir**")
+    return await event.respond("**❌ PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Yalnızca Yöneticiler Etiket işlemini Yapabilir**")
+    return await event.respond("**⛔ Siz Admin Deyilsiz!**\n✅ Bu Əmir Sadəcə Adminlər Üçün Keçərlidi**")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -240,13 +240,13 @@ async def mentionall(event):
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("**Bana Bir Metin Ver!**")
   else:
-    return await event.respond("**Bir Mesajı Yanıtlayın veya Başkalarından Bahsetmem için Bana Bir Betin Verin!!**")
+    return await event.respond("**❌ Tağ Edmək Üçün Bir Səbəb Yoxdur\n✅ Tağ Edə Bilməyim Üçün Səbəb Yazın\nℹ `/tag Salam`**")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
-    await event.respond(f"**Etiket işlemi Başarıyla Başlatıldı.!**")
+    await event.respond(f"**✅ Tağ Prosesi Başladıldı!**")
         
     async for usr in client.iter_participants(event.chat_id, aggressive=False):
       rxyzdev_tagTot[event.chat_id] += 1
