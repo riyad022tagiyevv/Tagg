@@ -567,7 +567,8 @@ async def info(bot, update):
 **🧖‍♂️ İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
 **🆔 Telegram ID :** `{update.from_user.id}`
 **🗒 Kulanıcı Adı :**  @{update.from_user.username}
-**🖇 Profil Linki :** [TOXUN 👇](tg://settings)"""
+**🖇 Profil Linki :** [TOXUN 👇](tg://settings)
+**qrup :**  `{(update.forward_from_chat or update.chat).id}`"""
     
     await update.reply_text(        
         text=text,
