@@ -554,8 +554,26 @@ async def admins(client, message):
   except FloodWait as e:
     await asyncio.sleep(e.value)
 	
-	
-
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="SOURCE", url=f"https://github.com/vivek-tp/Info-Bot")]])
+ 	
+ 
+@app.on_message(filters.private & filters.command("info"))
+async def info(bot, update):
+    
+    text = f"""--**Information**--
+ 
+**🙋🏻‍♂️ First Name :** {update.from_user.first_name}
+**🧖‍♂️ Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
+**🧑🏻‍🎓 Your Username :** {update.from_user.username}
+**🆔 Your Telegram ID :** {update.from_user.id}
+**🔗 Your Profile Link :** {update.from_user.mention}"""
+    
+    await update.reply_text(        
+        text=text,
+        disable_web_page_preview=True,
+        reply_markup=BUTTONS
+    )
+ 
 	
 
 
