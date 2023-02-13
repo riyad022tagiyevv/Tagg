@@ -38,6 +38,9 @@ from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import pyrogram
 from datetime import datetime
+from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
+ 
+
 
 
 
@@ -550,7 +553,23 @@ async def admins(client, message):
     await asyncio.sleep(e.value)
 	
 	
-
+@client.on(events.NewMessage(pattern="^.sil ?(.*)"))
+async def delete_msg(event):
+ 
+    if not await is_administrator(user_id=event.from_id, message=event):
+        await event.reply("You're not an admin!")
+        return
+ 
+    chat = event.chat_id
+    msg = await event.get_reply_message()
+    if not msg:
+        await event.reply("Reply to some message to delete it.")
+        return
+    to_delete = event.message
+    chat = await event.get_input_chat()
+    rm = [msg, to_delete]
+    await event.client.delete_messages(chat, rm)
+ 
 	
 	
 
