@@ -327,7 +327,7 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("**Eski Mesajlar için Üyelerden Bahsedemem! (gruba eklemeden önce gönderilen mesajlar)**")
+        return await event.respond("**Köhnə Mesajlar için Üyelerden Bahsedemem! (gruba eklemeden önce gönderilen mesajlar)**")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("**Bana Bir Metin Ver!**")
   else:
