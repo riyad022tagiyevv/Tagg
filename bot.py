@@ -473,12 +473,61 @@ async def delAcc(client, msj):
             DELETED.append(str(m.user.id)) # silinen hesablar
 
     shesablar = '\n'.join(DELETED) 
-    await app.send_message(chat_id, f"silinen hesablarin sayi - {len(DELETED)}\n\n{shesablar}")	
+    await app.send_message(chat_id, f"{shesablar}\n\n🗑 Silinen hesablarin sayi - {len(DELETED)}")	
 	
+	
+	
+	
+	
+@teletips.on_message(filters.command(["admins","staff"]))
+async def admins(client, message):
+  try: 
+    adminList = []
+    ownerList = []
+    async for admin in teletips.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
+      if admin.privileges.is_anonymous == False:
+        if admin.user.is_bot == True:
+          pass
+        elif admin.status == ChatMemberStatus.OWNER:
+          ownerList.append(admin.user)
+        else:  
+          adminList.append(admin.user)
+      else:
+        pass   
+    lenAdminList= len(ownerList) + len(adminList)  
+    text2 = f"GROUP STAFF - {message.chat.title}\n\n"
+    try:
+      owner = ownerList[0]
+      if owner.username == None:
+        text2 += f"👑 Owner\n└ {owner.mention}\n\n👮🏻 Admins\n"
+      else:
+        text2 += f"👑 Owner\n└ @{owner.username}\n\n👮🏻 Admins\n"
+    except:
+      text2 += f"👑 Owner\n└ <i>Hidden</i>\n\n👮🏻 Admins\n"
+    if len(adminList) == 0:
+      text2 += "└ <i>Admins are hidden</i>"  
+      await teletips.send_message(message.chat.id, text2)   
+    else:  
+      while len(adminList) > 1:
+        admin = adminList.pop(0)
+        if admin.username == None:
+          text2 += f"├ {admin.mention}\n"
+        else:
+          text2 += f"├ @{admin.username}\n"    
+      else:    
+        admin = adminList.pop(0)
+        if admin.username == None:
+          text2 += f"└ {admin.mention}\n\n"
+        else:
+          text2 += f"└ @{admin.username}\n\n"
+      text2 += f"✅ | Total number of admins: {lenAdminList}\n❌ | Bots and hidden admins were rejected."  
+      await teletips.send_message(message.chat.id, text2)           
+  except FloodWait as e:
+    await asyncio.sleep(e.value)
 	
 	
 
-@app.on_message(filters.command(["rev", "clean"]))
+@app.on_message(filters.command(["remove","clean"]))
 async def remove(client, message):
   global stopProcess
   try: 
@@ -488,7 +537,7 @@ async def remove(client, message):
     except:
       has_permissions = message.sender_chat  
     if has_permissions:
-      bot = await app.get_chat_member(message.chat.id, "self")
+      bot = await teletips.get_chat_member(message.chat.id, "self")
       if bot.status == ChatMemberStatus.MEMBER:
         await message.reply("🕹 | I need admin permissions to remove deleted accounts.")  
       else:  
@@ -512,12 +561,12 @@ async def remove(client, message):
             else:
               k = 0
               processTime = lenDeletedList*10
-              temp = await app.send_message(message.chat.id, f"🚨 | Total of {lenDeletedList} deleted accounts has been detected.\n⏳ | Estimated time: {processTime} seconds from now.")
+              temp = await teletips.send_message(message.chat.id, f"🚨 | Total of {lenDeletedList} deleted accounts has been detected.\n⏳ | Estimated time: {processTime} seconds from now.")
               if stopProcess: stopProcess = False
               while len(deletedList) > 0 and not stopProcess:   
                 deletedAccount = deletedList.pop(0)
                 try:
-                  await app.ban_chat_member(message.chat.id, deletedAccount.id)
+                  await client.ban_chat_member(message.chat.id, deletedAccount.id)
                 except Exception:
                   pass  
                 k+=1
@@ -532,8 +581,7 @@ async def remove(client, message):
     else:
       await message.reply("👮🏻 | Sorry, only admins can execute this command.")  
   except FloodWait as e:
-    await asyncio.sleep(e.value)
-
+    await asyncio.sleep(e.value)	
 
 	
 	
