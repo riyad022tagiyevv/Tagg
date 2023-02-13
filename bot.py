@@ -557,7 +557,7 @@ async def admins(client, message):
 BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="SOURCE", url=f"https://github.com/vivek-tp/Info-Bot")]])
  	
  
-@app.on_message(filters.private & filters.command("info"))
+@app.on_message(filters.private & filters.command("me"))
 async def info(bot, update):
     
     text = f"""--**Information**--
