@@ -567,7 +567,7 @@ async def info(bot, update):
 **🧖‍♂️ İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
 **🗒  Kulanıcı Adı :** @{update.from_user.username}
 **🆔 Telegram ID :** `{update.from_user.id}`
-**🖇 Profil Linki :** {msg.from_user.mention}"""
+**🖇 Profil Linki :** {from_user.mention}"""
     
     await update.reply_text(        
         text=text,
