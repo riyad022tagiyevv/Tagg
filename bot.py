@@ -48,7 +48,9 @@ async def is_administrator(user_id: int, message):
         if user_id == user.id or user_id in SUDO_USERS:
             admin = True
             break
-    return admin
+    return admin 
+
+SUDO_USERS = 12345659
 
 	
 	
