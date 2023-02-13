@@ -312,7 +312,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**Bu Komut Sadace Grublarda ve Kanallarda Kullanıma Bilir**")
+    return await event.respond("**Bu Komut Sadacə Grublarda ve Kanallarda Kullanıma Bilir**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
