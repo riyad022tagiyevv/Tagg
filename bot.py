@@ -565,9 +565,9 @@ async def info(bot, update):
  
 **🙋🏻‍♂️ İsdifadəçi Adı:** {update.from_user.first_name}
 **🧖‍♂️ İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
-**🗒 Kulanıcı Adı :** @{update.from_user.username}
 **🆔 Telegram ID :** `{update.from_user.id}`
-**🖇 Profil Linki :** {update.from_user.mention}"""
+**🗒 Kulanıcı Adı :**  @{update.from_user.username}
+**🖇 Profil Linki :** [TOXUN 👇](tg://settings)"""
     
     await update.reply_text(        
         text=text,
