@@ -193,6 +193,18 @@ async def handler(event):
                     ),
                     link_preview=False)
 
+@client.on(events.callbackquery.CallbackQuery(data="info"))
+async def handler(event):
+    await event.edit(f" ha ha", buttons=(
+		      [
+                      Button.inline("◀️ Geri", data="help"), 
+		      Button.inline("🏠 ANA MEYNU", data="start")
+                      ],
+                    ),
+                    link_preview=False)
+
+
+
 
 @client.on(events.NewMessage())
 async def mentionalladmin(event):
