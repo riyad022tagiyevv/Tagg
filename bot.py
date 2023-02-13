@@ -484,11 +484,11 @@ async def delAcc(client, msj):
     await app.send_message(chat_id, f"{shesablar}\n\n🗑 Silinen hesablarin sayi - {len(DELETED)}")	
 	
 	
-@teletips.on_message(filters.command("bots"))
+@app.on_message(filters.command("bots"))
 async def bots(client, message):  
   try:    
     botList = []
-    async for bot in teletips.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.BOTS):
+    async for bot in app.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.BOTS):
       botList.append(bot.user)
     lenBotList = len(botList) 
     text3  = f"**BOT LIST** - `{message.chat.title}`\n\n🤖 __Bots__\n"
@@ -555,17 +555,17 @@ async def admins(client, message):
 
 	
 	
-@teletips.on_message(filters.command(["remove","sil"]))
+@app.on_message(filters.command(["remove","sil"]))
 async def remove(client, message):
   global stopProcess
   try: 
     try:
-      sender = await teletips.get_chat_member(message.chat.id, message.from_user.id)
+      sender = await app.get_chat_member(message.chat.id, message.from_user.id)
       has_permissions = sender.privileges
     except:
       has_permissions = message.sender_chat  
     if has_permissions:
-      bot = await teletips.get_chat_member(message.chat.id, "self")
+      bot = await app.get_chat_member(message.chat.id, "self")
       if bot.status == ChatMemberStatus.MEMBER:
         await message.reply("🕹 | Silinmiş hesabları silmək üçün mənə admin icazələri lazımdır.")  
       else:  
@@ -594,7 +594,7 @@ async def remove(client, message):
               while len(deletedList) > 0 and not stopProcess:   
                 deletedAccount = deletedList.pop(0)
                 try:
-                  await teletips.ban_chat_member(message.chat.id, deletedAccount.id)
+                  await app.ban_chat_member(message.chat.id, deletedAccount.id)
                 except Exception:
                   pass  
                 k+=1
