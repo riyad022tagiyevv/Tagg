@@ -494,14 +494,14 @@ async def bots(client, message):
     async for bot in app.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.BOTS):
       botList.append(bot.user)
     lenBotList = len(botList) 
-    text3  = f"{message.chat.title} - **QURUPUNDAKI BOTLAR**\n\n🤖 __Bots__\n"
+    text3  = f"{message.chat.title} - **QURUPUNDAKI BOTLAR**\n\n👮‍♂️ __**İSDƏYƏN**__ {message.from_user.mention()}\n"
     while len(botList) > 1:
       bot = botList.pop(0)
-      text3 += f"├ @{bot.username}\n"    
+      text3 += f"├ 🤖 @{bot.username}\n"    
     else:    
       bot = botList.pop(0)
-      text3 += f"└ @{bot.username}\n\n"
-      text3 += f"✅ | **Botların ümumi sayı**: {lenBotList}"  
+      text3 += f"└ 🤖 @{bot.username}\n\n"
+      text3 += f"📊 | **Botların ümumi sayı**: {lenBotList}"  
       await app.send_message(message.chat.id, text3)
   except FloodWait as e:
     await asyncio.sleep(e.value)
