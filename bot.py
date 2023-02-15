@@ -1238,7 +1238,7 @@ async def get_id(client, message):
             await message.reply("Sorry, you cannot get the forwarded user ID because of their privacy settings")
  
         else:
-            await message.reply(f"👤 **AD**: {message.reply_to_message.from_user.mention}\n🆔️ **İD**: <code>`{message.reply_to_message.from_user.id}`</code>\n🗨 **QRUP ADI**: {message.chat.title}")   
+            await message.reply(f"👤 **AD**: {message.reply_to_message.from_user.mention}\n🖇 **TAĞ**: @{message.reply_to_message.from_user.username}\n🆔️ **İD**: <code>`{message.reply_to_message.from_user.id}`</code>\n🗨 **QRUP ADI**: {message.chat.title}")   
  
     except Exception:
             await message.reply("An error occured while getting the ID.")
