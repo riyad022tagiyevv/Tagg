@@ -1023,7 +1023,7 @@ async def tag_admin(event):
  
 @client.on(events.NewMessage(pattern='(?i)/tema+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.respond(f"🤖 [𝐗𝐀𝐎𝐒 𝐓𝐀𝐆𝐆𝐄𝐑](https://t.me/XAOS_Tagbot) **Sizin Üçün Random** 🎨  [𝔹İℝ 𝕋𝔼𝕄𝔸]({random.choice(taım)}) **Seçdi**",
+    await event.respond(f"\n🤖 [𝐗𝐀𝐎𝐒 𝐓𝐀𝐆𝐆𝐄𝐑](https://t.me/XAOS_Tagbot) **Sizin Üçün Random** 🎨  [𝔹İℝ 𝕋𝔼𝕄𝔸]({random.choice(taım)}) **Seçdi**",
 		      buttons=(
 			   
                       [Button.inline("♻️ DƏYİŞ", data="tema")],
@@ -1034,7 +1034,7 @@ async def yeni_mesaj(event: events.NewMessage.Event):
  
 @client.on(events.callbackquery.CallbackQuery(data="tema"))
 async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.respond(f"🤖 [𝐗𝐀𝐎𝐒 𝐓𝐀𝐆𝐆𝐄𝐑](https://t.me/XAOS_Tagbot) **Sizin Üçün Random 🎨**  [𝔹İℝ 𝕋𝔼𝕄𝔸]({random.choice(taım)}) **Seçdi**",
+    await event.respond(f"\n🤖 [𝐗𝐀𝐎𝐒 𝐓𝐀𝐆𝐆𝐄𝐑](https://t.me/XAOS_Tagbot) **Sizin Üçün Random 🎨**  [𝔹İℝ 𝕋𝔼𝕄𝔸]({random.choice(taım)}) **Seçdi**",
 		      
 		      buttons=(
 			   
@@ -1045,8 +1045,37 @@ async def yeni_mesaj(event: events.NewMessage.Event):
  
  
  
+@client.on(events.NewMessage(pattern="^.pin ?(.*)"))
+async def pin(event):
+    if event.sender_id == OWNER_ID:
+        if not event.reply_to_msg_id:
+            return await event.reply("Bir mesajı cavablayın")
+        await event.reply("Meeaj Pinləndi")
+        await event.client.pin_message(event.chat_id, event.reply_to_msg_id, notify=True)
+    else:
+        await event.reply("Sən sahib deyilsən pinləməyə çalışma")
+ 
+#Bu kodu @edalet_22 tərəfindən @RoBotlarimTg kanalı üçün yazılmışdır (bu messagı silməyin!!!!!!)
+@client.on(events.NewMessage(pattern="^.unpin ?(.*)"))
+async def unpin(event):
+    if event.sender_id == OWNER_ID:
+        if not event.reply_to_msg_id:
+            return await event.reply("Bir pinlənən mesajı cavablayın")
+        await event.reply("Pinlənmiş mesaj qaldırıldı")
+        await event.client.unpin_message(event.chat_id)
+    else:
+        await event.reply("Sən sahib deyilsən unpinləməyə çalışma")
 
- 	
+
+@client.on(events.ChatAction)
+async def handler(event):
+    if event.user_joined:
+        await event.reply(f"👋 Aramıza Xoş Gəldin")
+ 
+@client.on(events.ChatAction)
+async def handler(event):
+    if event.user_left:
+        await event.reply(f"Səni tanimaq gözəl idi❗")
 	
 
 
@@ -1200,7 +1229,7 @@ BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="➕ QRUPA ƏLAVƏ ET
  	
  
 
-@app.on_message(filters.command(["info", "me"]))
+@app.on_message(filters.command(["men", "me"]))
 async def info(bot, update):
     
     text = f"""  **ℹ MƏLUMAT**
@@ -1219,7 +1248,7 @@ async def info(bot, update):
     )
  
 	
-@app.on_message(filters.command('mee'))
+@app.on_message(filters.command('info'))
 async def get_id(client, message):
     try:
  
