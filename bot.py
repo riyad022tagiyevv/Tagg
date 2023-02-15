@@ -563,12 +563,11 @@ async def info(bot, update):
     
     text = f"""  **ℹ MƏLUMAT**
  
-**🙋🏻‍♂️ İsdifadəçi Adı:** {update.from_user.first_name}
+**🙋🏻‍♂️ İsdifadəçi Adı:** {update.from_user.mention()}
 **🧖‍♂️ İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
-**🆔 Telegram ID :** `{update.from_user.id}`
+**🆔 Telegram ID :** {update.from_user.id}
 **🗒 Kulanıcı Adı :**  @{update.from_user.username}
-**🖇 Profil Linki :** {update.from_user.mention()}
-**🆔️ Qrup İD :** `{(update.forward_from_chat or update.chat).id}`
+**🆔️ Qrup İD :** {(update.forward_from_chat or update.chat).id}
 **🗨 Qrup Adı:** {update.chat.title}"""
     
     await update.reply_text(        
