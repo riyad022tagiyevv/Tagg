@@ -1224,12 +1224,12 @@ async def get_id(client, message):
     try:
  
         if (not message.reply_to_message) and (message.chat):
-            await message.reply(f"👤 **AD** {message.from_user.mention()}\n🆔️ *İD** <code>{message.from_user.id }</code>.\n🗨 **QRUP ADI** {message.chat.title}\n🗨 **QRUP İD** <code>{message.chat.id}</code>.") 
+            await message.reply(f"👤 **AD** {message.from_user.mention()}\n🆔️ **İD** <code>{message.from_user.id }</code>.\n🗨 **QRUP ADI** {message.chat.title}\n🗨 **QRUP İD** <code>{message.chat.id}</code>.") 
         elif not message.reply_to_message:
             await message.reply(f"👤 - {message.from_user.mention}\n🆔️ - <code>`{message.from_user.id }`</code>.") 
  
         elif message.reply_to_message.forward_from_chat:
-            await message.reply(f"The forwarded {str(message.reply_to_message.forward_from_chat.type)[9:].lower()}, {message.reply_to_message.forward_from_chat.title} has an ID of <code>{message.reply_to_message.forward_from_chat.id}</code>.") 
+            await message.reply(f"🔖 **KANAL ADI** {str(message.reply_to_message.forward_from_chat.type)[9:].lower()}, {message.reply_to_message.forward_from_chat.title}\n🆔️ **KANAL İD** <code>{message.reply_to_message.forward_from_chat.id}</code>.") 
  
         elif message.reply_to_message.forward_from:
             await message.reply(f"The forwarded user, {message.reply_to_message.forward_from.first_name} has an ID of <code>{message.reply_to_message.forward_from.id   }</code>.")
