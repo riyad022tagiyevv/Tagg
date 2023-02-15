@@ -40,7 +40,7 @@ import pyrogram
 from datetime import datetime
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
 from mesaj.tag import soz, heyvan, emoji, bayrag, mafia, seher, sehidler
-from medaj.random import taım
+from mesaj.random import taım
 	
 	
 	
