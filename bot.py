@@ -956,7 +956,7 @@ async def mentionall(event):
       usrtxt += f"\n• - [{random.choice(sehidler)}](tg://user?id={usr.id}) "
       if event.chat_id not in anlik_calisan:
         return
-      if usrnum == 1:
+      if usrnum == 5:
         await client.send_message(event.chat_id, f"{usrtxt}")
         await asyncio.sleep(2)
         usrnum = 0
@@ -977,7 +977,7 @@ async def mentionall(event):
       usrtxt += f"\n• - [{random.choice(sehidler)}](tg://user?id={usr.id}) "
       if event.chat_id not in anlik_calisan:
         return
-      if usrnum == 1:
+      if usrnum == 5:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
         await asyncio.sleep(2)
         usrnum = 0
