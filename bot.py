@@ -1291,8 +1291,8 @@ async def get_id(client, message):
 ################# SAHİP KOMUTLARI #############
  
 # Verileri listeleme komutu
-SAHİB = 5663585448
-@app.on_message(filters.command("alive") & filters.user(SAHİB))
+
+@app.on_message(filters.command("alive")))
 async def alive(client, message):
     await message.edit(f"Haycan {message.from_user.mention()}\nBot İşləyir Narahat olma")
  
