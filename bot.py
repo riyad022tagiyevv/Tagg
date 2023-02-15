@@ -1227,7 +1227,7 @@ async def get_id(client, message):
             await message.reply(f"""**ℹ MƏLUMAT**
  
 **🙋🏻‍♂️ İsdifadəçi Adı:** {message.from_user.mention()}
-**🧖‍♂️ İkinci Ad :** {message.from_user.last_name if update.from_user.last_name else 'None'}
+**🧖‍♂️ İkinci Ad :** {message.from_user.last_name if message.from_user.last_name else 'None'}
 **🆔 Telegram ID :** `{message.from_user.id}`
 **🗒 Kulanıcı Adı :**  `@{message.from_user.username}`
 **🆔 Qrup İD :** `{(message.forward_from_chat or message.chat).id}`
