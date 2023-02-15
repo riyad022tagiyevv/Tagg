@@ -1224,15 +1224,7 @@ async def get_id(client, message):
     try:
  
         if (not message.reply_to_message) and (message.chat):
-            await message.reply(f"""**ℹ MƏLUMAT**
- 
-**🙋🏻‍♂️ İsdifadəçi Adı:** {message.from_user.mention()}
-**🧖‍♂️ İkinci Ad :** {message.from_user.last_name if message.from_user.last_name else 'None'}
-**🆔 Telegram ID :** `{message.from_user.id}`
-**🗒 Kulanıcı Adı :**  `@{message.from_user.username}`
-**🆔 Qrup İD :** `{(message.forward_from_chat or message.chat).id}`
-**🗨 Qrup Adı:** {message.chat.title}"""
-
+            await message.reply(f"👤 **AD** {message.from_user.mention()}\n🆔️ *İD** <code>{message.from_user.id }</code>.\n🗨 **QRUP ADI** {message.chat.title}\n🗨 **QRUP İD** <code>{message.chat.id}</code>.") 
         elif not message.reply_to_message:
             await message.reply(f"👤 - {message.from_user.mention}\n🆔️ - <code>`{message.from_user.id }`</code>.") 
  
@@ -1246,7 +1238,7 @@ async def get_id(client, message):
             await message.reply("Sorry, you cannot get the forwarded user ID because of their privacy settings")
  
         else:
-            await message.reply(f"User {message.reply_to_message.from_user.first_name}'s ID is <code>{message.reply_to_message.from_user.id}</code>.")   
+            await message.reply(f"👤 **AD**: {message.reply_to_message.from_user.first_name}\n🆔️ **İD**: <code>{message.reply_to_message.from_user.id}</code>\n🗨 **QRUP ADI**: {message.chat.title}")   
  
     except Exception:
             await message.reply("An error occured while getting the ID.")
