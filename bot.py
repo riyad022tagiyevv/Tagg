@@ -474,9 +474,21 @@ async def mentionall(event):
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Tağ Prosesi Uğurla tamamlandı**\n\n**⚡ Tağ Edildi:-**  `{rxyzdev_tagTot[event.chat_id]}`\n**🗣 Prosesi Başladan:-**  {rxyzdev_initT}")
  
  
- 
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
+async def cancel(event):
+  global anlik_calisan
+  anlik_calisan.remove(event.chat_id)
+  
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
 
-	
+
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
+async def cancel(event):
+  global anlik_calisan
+  anlik_calisan.remove(event.chat_id)
+  
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
+
 	
   
 
