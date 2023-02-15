@@ -1224,7 +1224,7 @@ async def get_id(client, message):
     try:
  
         if (not message.reply_to_message) and (message.chat):
-            await message.reply(f"👤 **AD** - {message.from_user.mention()}}\n🆔️ **İD**- <code>`{message.from_user.id }`</code>.\n🗨 **QRUP ADI**- {message.chat.title}\n🗨🆔️ **QRUP İDİ** - <code>`{message.chat.id}`</code>") 
+            await message.reply(f"👤 **AD** - {message.from_user.mention()}\n🆔️ **İD**- <code>`{message.from_user.id }`</code>.\n🗨 **QRUP ADI**- {message.chat.title}\n🗨🆔️ **QRUP İDİ** - <code>`{message.chat.id}`</code>") 
  
         elif not message.reply_to_message:
             await message.reply(f"👤 - {message.from_user.mention}\n🆔️ - <code>`{message.from_user.id }`</code>.") 
