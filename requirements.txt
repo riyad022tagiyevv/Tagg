@@ -2,7 +2,7 @@ aiogram
 telethon
 cryptg
 requests
-pyrogram==2.0.97
+pyrogram
 pymongo[srv]
 aiofiles
 psutil
