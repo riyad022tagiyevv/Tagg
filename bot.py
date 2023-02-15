@@ -491,7 +491,7 @@ async def cancel(event):
 
 
 		
-@client.on(events.NewMessage(pattern="^/etag ?(.*)"))
+@client.on(events.NewMessage(pattern="^/htag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -515,7 +515,7 @@ async def mentionall(event):
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("**📌 Tağ Edə Bilməyim Üçün Mənə Mətin Ver**")
   else:
-    return await event.respond("**❌ Tağ Edmək Üçün Bir Səbəb Yoxdur\n✅ Tağ Edə Bilməyim Üçün Səbəb Yazın\nℹ `/etag Salam`**")
+    return await event.respond("**❌ Tağ Edmək Üçün Bir Səbəb Yoxdur\n✅ Tağ Edə Bilməyim Üçün Səbəb Yazın\nℹ `/htag Salam`**")
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
