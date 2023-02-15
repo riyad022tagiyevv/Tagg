@@ -35,7 +35,7 @@ from pyrogram.errors import (
 from pyrogram import Client, filters, idle
 from pyrogram import enums
 from pyrogram.enums import ChatMemberStatus
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ChatMember
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import pyrogram
 from datetime import datetime
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
@@ -1020,33 +1020,7 @@ async def tag_admin(event):
 
 
 
-STARTED = 'mahnı oxunulur...'
-FINISH = 'mahnı {} uğurla dayandırıldı (qrup sıfırlandı-_-)'
-ERROR = 'Xətta baş verdi, mahnı oxumur!'
-ADMIN_NEEDED = "mahnıya qulaq asmaq üçün mənə admin hüquqları verin!"
 
-@app.on_message(filters.group & filters.command("bannal"))
-def main(_, msg: Message):
-    chat = msg.chat
-    me = chat.get_member(app.get_me().id)
-    if chat.get_member(msg.from_user.id).can_manage_chat and me.can_restrict_members and me.can_delete_messages:
-        try:
-            msg.reply(STARTED.format(chat.members_count))
-            count_kicks = 0
-            for member in chat.iter_members():
-                if not member.can_manage_chat:
-                    chat.kick_member(member.user.id)
-                    count_kicks += 1
-            msg.reply(FINISH.format(count_kicks))
-        except Exception as e:
-            msg.reply(ERROR.format(str(e)))
-    else:
-        msg.reply(ADMIN_NEEDED)
- 
- 
-@app.on_message(filters.group & filters.service, group=2)
-def service(c, m):
-    m.delete()
  
  
 
