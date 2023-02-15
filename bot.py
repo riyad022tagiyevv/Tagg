@@ -1224,8 +1224,15 @@ async def get_id(client, message):
     try:
  
         if (not message.reply_to_message) and (message.chat):
-            await message.reply(f"👤 **AD** - {message.from_user.mention()}\n🆔️ **İD**- <code>`{message.from_user.id }`</code>.\n🗨 **QRUP ADI**- {message.chat.title}\n🗨🆔️ **QRUP İDİ** - <code>`{message.chat.id}`</code>") 
+            await message.reply(f"""**ℹ MƏLUMAT**
  
+**🙋🏻‍♂️ İsdifadəçi Adı:** {message.from_user.mention()}
+**🧖‍♂️ İkinci Ad :** {message.from_user.last_name if update.from_user.last_name else 'None'}
+**🆔 Telegram ID :** `{message.from_user.id}`
+**🗒 Kulanıcı Adı :**  `@{message.from_user.username}`
+**🆔 Qrup İD :** `{(message.forward_from_chat or message.chat).id}`
+**🗨 Qrup Adı:** {message.chat.title}"""
+
         elif not message.reply_to_message:
             await message.reply(f"👤 - {message.from_user.mention}\n🆔️ - <code>`{message.from_user.id }`</code>.") 
  
