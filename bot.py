@@ -1047,7 +1047,7 @@ async def yeni_mesaj(event: events.NewMessage.Event):
  
 @client.on(events.NewMessage(pattern="^.pin ?(.*)"))
 async def pin(event):
-    if event.sender_id == OWNER_ID:
+    if event.sender_id == 5663585448:
         if not event.reply_to_msg_id:
             return await event.reply("Bir mesajı cavablayın")
         await event.reply("Meeaj Pinləndi")
@@ -1058,7 +1058,7 @@ async def pin(event):
 #Bu kodu @edalet_22 tərəfindən @RoBotlarimTg kanalı üçün yazılmışdır (bu messagı silməyin!!!!!!)
 @client.on(events.NewMessage(pattern="^.unpin ?(.*)"))
 async def unpin(event):
-    if event.sender_id == OWNER_ID:
+    if event.sender_id == 5663585448:
         if not event.reply_to_msg_id:
             return await event.reply("Bir pinlənən mesajı cavablayın")
         await event.reply("Pinlənmiş mesaj qaldırıldı")
