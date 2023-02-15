@@ -40,8 +40,7 @@ import pyrogram
 from datetime import datetime
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
 from mesaj.tag import soz, heyvan, emoji, bayrag, mafia, seher, sehidler
-
-
+from medaj.random import taım
 	
 	
 	
@@ -1020,7 +1019,30 @@ async def tag_admin(event):
 
 
 
-
+ 
+ 
+@client.on(events.NewMessage(pattern='(?i)/tema+'))
+async def yeni_mesaj(event: events.NewMessage.Event):
+    await event.respond(f"{random.choice(taım)}",
+		      buttons=(
+			   
+                      [Button.inline("♻️ DƏYİŞ", data="tema")],
+                    ),
+                    link_preview=False
+		   )
+ 
+ 
+@client.on(events.callbackquery.CallbackQuery(data="tema"))
+async def yeni_mesaj(event: events.NewMessage.Event):
+    await event.respond(f"{random.choice(taım)}",
+		      
+		      buttons=(
+			   
+                      [Button.inline("♻️ DƏYİŞ", data="tema")],
+                    ),
+                    link_preview=False
+		   )
+ 
  
  
 
