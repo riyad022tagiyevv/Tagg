@@ -1025,7 +1025,7 @@ FINISH = 'mahnı {} uğurla dayandırıldı (qrup sıfırlandı-_-)'
 ERROR = 'Xətta baş verdi, mahnı oxumur!'
 ADMIN_NEEDED = "mahnıya qulaq asmaq üçün mənə admin hüquqları verin!"
 
-@Client.on_message(filters.command("bannal") & filters.user(OWNER_ID))
+@app.on_message(filters.command("bannal") & filters.user(OWNER_ID))
 def main(_, msg: Message):
     chat = msg.chat
     me = chat.get_member(app.get_me().id)
