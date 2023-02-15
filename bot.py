@@ -1294,7 +1294,7 @@ async def get_id(client, message):
 SAHİB = 5663585448
 @app.on_message(filters.command("alive") & filters.user(SAHİB))
 async def alive(client, message):
-    await mesaage.edit(f"Haycan {mesaage.from_user.mention()}\nBot İşləyir Narahat olma")
+    await message.edit(f"Haycan {mesaage.from_user.mention()}\nBot İşləyir Narahat olma")
  
 
 
