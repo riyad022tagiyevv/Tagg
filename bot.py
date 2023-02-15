@@ -33,6 +33,8 @@ from pyrogram.errors import (
     UserIsBlocked,
 )
 from pyrogram import Client, filters, idle
+from pyrogram import Client as USER
+from helpers.chats import add_served_chat, blacklisted_chats, get_served_chats
 from pyrogram import enums
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
