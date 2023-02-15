@@ -39,7 +39,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import pyrogram
 from datetime import datetime
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
-from medaj.tag import soz
+from mesaj.tag import soz
 
 
 	
