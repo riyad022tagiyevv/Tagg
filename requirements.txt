@@ -10,6 +10,5 @@ motor
 pymongo
 async-lru
 pyaes
-Pyrogram
 PySocks
 TgCrypto
