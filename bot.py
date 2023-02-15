@@ -494,7 +494,7 @@ async def bots(client, message):
     async for bot in app.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.BOTS):
       botList.append(bot.user)
     lenBotList = len(botList) 
-    text3  = f"{message.chat.title} - **QURUPUNDAKI BOTLAR**\n\n👮‍♂️ __**İSDƏYƏN**__ {message.from_user.mention()}\n"
+    text3  = f"{message.chat.title} - **QURUPUNDAKI BOTLAR**\n\n👮‍♂️ __**İSDƏYƏN**__ : {message.from_user.mention()}\n\n"
     while len(botList) > 1:
       bot = botList.pop(0)
       text3 += f"├ 🤖 @{bot.username}\n"    
@@ -567,8 +567,9 @@ async def info(bot, update):
 **🧖‍♂️ İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
 **🆔 Telegram ID :** `{update.from_user.id}`
 **🗒 Kulanıcı Adı :**  @{update.from_user.username}
-**🖇 Profil Linki :** [TOXUN 👇](tg://settings)
-**🆔️ Qrup İD :**    `{(update.forward_from_chat or update.chat).id}`"""
+**🖇 Profil Linki :** {update.from_user.mention()}
+**🆔️ Qrup İD :** `{(update.forward_from_chat or update.chat).id}`
+**🗨 Qrup Adı:** {update.chat.title}"""
     
     await update.reply_text(        
         text=text,
