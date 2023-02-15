@@ -1281,7 +1281,7 @@ async def get_id(client, message):
 DATABASE_URL = "mongodb+srv://Kolgeli:sesiz@cluster0.sgubr8z.mongodb.net/Elmdar?retryWrites=true&w=majority" # MongoDB veritabanınızın url'si. Nasıl alacağınızı bilmiyorsanız destek grubu @RepoHaneX'e gelin.
 BOT_USERNAME = "@XAOS_Tagbot" # Botunuzun kullanıcı adı.
 LOG_CHANNEL = 12345678 # Botunuzun eylemleri kaydedeceği kayıt grubunun id'si.
-GROUP_SUPPORT =  # Botunuzdan yasaklanan kullanıcıların itiraz işlemleri için başvuracağı grup, kanal veya kullanıcı. Boş bırakırsanız otomatik olarak OWNER_ID kimliğine yönlendirecektir.
+GROUP_SUPPORT = "@ükdkejd" # Botunuzdan yasaklanan kullanıcıların itiraz işlemleri için başvuracağı grup, kanal veya kullanıcı. Boş bırakırsanız otomatik olarak OWNER_ID kimliğine yönlendirecektir.
 GONDERME_TURU = "False" # Botunuzun yanıtladığınız mesajı gönderme türü. Eğer direkt iletmek isterseniz False, kopyasını göndermek isterseniz True olarak ayarlayın.
 OWNER_ID = 5663585448 # Sahip hesabın id'si
 LANGAUGE = "AZ" #Dil ayarı
