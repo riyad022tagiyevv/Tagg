@@ -1181,9 +1181,9 @@ async def info(bot, update):
  
 **🙋🏻‍♂️ İsdifadəçi Adı:** {update.from_user.mention()}
 **🧖‍♂️ İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
-**🆔 Telegram ID :** {update.from_user.id}
-**🗒 Kulanıcı Adı :**  @{update.from_user.username}
-**🆔 Qrup İD :** {(update.forward_from_chat or update.chat).id}
+**🆔 Telegram ID :** `{update.from_user.id}`
+**🗒 Kulanıcı Adı :**  `@{update.from_user.username}`
+**🆔 Qrup İD :** `{(update.forward_from_chat or update.chat).id}`
 **🗨 Qrup Adı:** {update.chat.title}"""
     
     await update.reply_text(        
