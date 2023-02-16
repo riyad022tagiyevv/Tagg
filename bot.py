@@ -43,7 +43,13 @@ from datetime import datetime
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
 from mesaj.tag import soz, heyvan, emoji, bayrag, mafia, seher, sehidler
 from mesaj.random import taım
-	
+
+import secrets
+import aiohttp
+from cryptography.fernet import Fernet
+from kolge.komekci import random_line
+ 
+ 
 	
 	
 
@@ -217,6 +223,12 @@ async def handler(event):
                     link_preview=False)
 
 
+
+@app.on_message(filters.command("meslehet") & ~filters.edited)
+async def meslehet(_, message):
+    await message.reply_text((await random_line('komekci/txt/meslehet.txt')))
+ 
+ 
 
 
 @client.on(events.NewMessage())
