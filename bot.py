@@ -229,7 +229,7 @@ button = InlineKeyboardMarkup([
 
 @app.on_message(filters.command("meslehet"))
 async def meslehet(_, message):
-    await message.edit_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=button)
+    await message.reply_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=button)
  
  
 
