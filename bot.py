@@ -223,13 +223,16 @@ async def handler(event):
 
 
 button = InlineKeyboardMarkup([
-    [InlineKeyboardButton("♻️ DƏYİŞ", callback_data="deyis")]
+    [InlineKeyboardButton("♻️ DƏYİŞ", callback_data="sehid")]
 ])
 
+buton = InlineKeyboardMarkup([
+    [InlineKeyboardButton("♻️ DƏYİŞ", callback_data="meslehet")]
+])
 
 @app.on_message(filters.command("meslehet"))
 async def meslehet(_, message):
-    await message.reply_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=button)
+    await message.reply_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=buton)
  
  
 
@@ -240,15 +243,15 @@ async def commit(_, message):
 
 
 
-@app.on_callback_query(filters.regex("deyis"))
+@app.on_callback_query(filters.regex("sehid"))
 async def deyis(_, query: CallbackQuery):
     await query.edit_message_text((await random_line('kolge/txt/sehid.txt')), reply_markup=button)
 
 
 
-@app.on_callback_query(filters.regex("deyis"))
+@app.on_callback_query(filters.regex("meslehet"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=button)
+    await query.edit_message_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=buton)
 
 
 
