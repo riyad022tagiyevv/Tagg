@@ -234,7 +234,7 @@ button = InlineKeyboardMarkup([
     [InlineKeyboardButton("🔄 Dəyiş", callback_data="deyis")]
 ])
 
-@app.on_message(filters.command("sehid") & ~filters.edited)
+@app.on_message(filters.command("sehid"))
 async def commit(_, message):
     await message.reply_text((await random_line('kolge/txt/sehid.txt')), reply_markup=button)
 
