@@ -1041,7 +1041,7 @@ async def tag_admin(event):
  
 @client.on(events.NewMessage(pattern='(?i)/tema+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.respond(f"\n🤖 [𝐗𝐀𝐎𝐒 𝐓𝐀𝐆𝐆𝐄𝐑](https://t.me/XAOS_Tagbot) **Sizin Üçün Random** 🎨  [𝔹İℝ 𝕋𝔼𝕄𝔸]({random.choice(taım)}) **Seçdi**",
+    await event.respond(f"\n💁‍♂️ [𝐗𝐀𝐎𝐒](https://t.me/XAOS_Tagbot) **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDi**\n\n🎨  [TEMA  -  TOXUN 👇]({random.choice(taım)})",
 		      buttons=(
 			   
                       [Button.inline("♻️ DƏYİŞ", data="tema")],
@@ -1052,9 +1052,10 @@ async def yeni_mesaj(event: events.NewMessage.Event):
  
 @client.on(events.callbackquery.CallbackQuery(data="tema"))
 async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.respond(f"\n🤖 [𝐗𝐀𝐎𝐒 𝐓𝐀𝐆𝐆𝐄𝐑](https://t.me/XAOS_Tagbot) **Sizin Üçün Random 🎨**  [𝔹İℝ 𝕋𝔼𝕄𝔸]({random.choice(taım)}) **Seçdi**",
-		      
+    await event.respond(f"\n💁‍♂️ [𝐗𝐀𝐎𝐒](https://t.me/XAOS_Tagbot) **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDi**\n\n🎨  [TEMA  -  TOXUN 👇]({random.choice(taım)})",
+		
 		      buttons=(
+		
 			   
                       [Button.inline("♻️ DƏYİŞ", data="tema")],
                     ),
