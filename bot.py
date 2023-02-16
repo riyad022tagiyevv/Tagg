@@ -230,14 +230,14 @@ buton = InlineKeyboardMarkup([
     [InlineKeyboardButton("♻️ DƏYİŞ", callback_data="meslehet")]
 ])
 
-@app.on_message(filters.command("meslehet"))
+@app.on_message(filters.command("meslehet", ["/", "!", "@", "."]))
 async def meslehet(_, message):
     await message.reply_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=buton)
  
  
 
  
-@app.on_message(filters.command("sehid"))
+@app.on_message(filters.command("sehid", ["/", "!", "@", "."]))
 async def commit(_, message):
     await message.reply_text((await random_line('kolge/txt/sehid.txt')), reply_markup=button)
 
