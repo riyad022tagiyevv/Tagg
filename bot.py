@@ -86,7 +86,7 @@ rxyzdev_initT = {}
 
 
 
-@client.on(events.NewMessage(pattern='^[/!.]cancel$'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -94,7 +94,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`")
 
 
-@client.on(events.NewMessage(pattern='^[/!.]dayan$'))
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -266,7 +266,7 @@ async def mentionalladmin(event):
     else:
       etiketuye.append(event.chat_id)
 
-@client.on(events.NewMessage(pattern="^[/!.]tag$"))
+@client.on(events.NewMessage(pattern="^.tag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -335,7 +335,7 @@ async def mentionall(event):
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Tağ Prosesi Uğurla Tamamlandı !.\n\n📊 Tağ Edilənlərin Sayı: {rxyzdev_tagTot[event.chat_id]}\n\n👤 Prosesi Başladan: {rxyzdev_initT}**")
   
-@client.on(events.NewMessage(pattern='^[/!.@]cancel$'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -343,7 +343,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`")
 
 
-@client.on(events.NewMessage(pattern='^[/!.@]dayan$'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -354,7 +354,7 @@ async def cancel(event):
 		
 		
 
-@client.on(events.NewMessage(pattern="^[/!.@]ttag$"))
+@client.on(events.NewMessage(pattern="^.ttag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -424,7 +424,7 @@ async def mentionall(event):
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Tağ Prosesi Uğurla Tamamlandı !.\n\n📊 Tağ Edilənlərin Sayı: {rxyzdev_tagTot[event.chat_id]}\n\n👤 Prosesi Başladan: {rxyzdev_initT}**")
   
 
-@client.on(events.NewMessage(pattern='^[/!.@]cancel$'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -432,7 +432,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
 
 
-@client.on(events.NewMessage(pattern='^[/!.@]dayan$'))
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -443,7 +443,7 @@ async def cancel(event):
 		
 		
 	
-@client.on(events.NewMessage(pattern="^[/!.@]stag$"))
+@client.on(events.NewMessage(pattern="^.stag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -513,7 +513,7 @@ async def mentionall(event):
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Tağ Prosesi Uğurla tamamlandı**\n\n**⚡ Tağ Edildi:-**  `{rxyzdev_tagTot[event.chat_id]}`\n**🗣 Prosesi Başladan:-**  {rxyzdev_initT}")
  
  
-@client.on(events.NewMessage(pattern='^[/!.@]cancel$'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -521,7 +521,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📋 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`")
 
 
-@client.on(events.NewMessage(pattern='^[/!.@]dayan$'))
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -530,7 +530,7 @@ async def cancel(event):
 
 
 		
-@client.on(events.NewMessage(pattern="^[/!.@]htag$"))
+@client.on(events.NewMessage(pattern="^.htag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -599,7 +599,7 @@ async def mentionall(event):
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Tağ Prosesi Uğurla Tamamlandı !.\n\n📊 Tağ Edilənlərin Sayı: {rxyzdev_tagTot[event.chat_id]}\n\n👤 Prosesi Başladan: {rxyzdev_initT}**")
   
-@client.on(events.NewMessage(pattern='^[/!.@]cancel$'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -607,7 +607,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
  
  
-@client.on(events.NewMessage(pattern='^[/!.@]dayan$'))
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -616,7 +616,7 @@ async def cancel(event):
  
 		
   
-@client.on(events.NewMessage(pattern="^[/!.@]btag$"))
+@client.on(events.NewMessage(pattern="^.btag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -685,7 +685,7 @@ async def mentionall(event):
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Tağ Prosesi Uğurla Tamamlandı !.\n\n📊 Tağ Edilənlərin Sayı: {rxyzdev_tagTot[event.chat_id]}\n\n👤 Prosesi Başladan: {rxyzdev_initT}**")
   
-@client.on(events.NewMessage(pattern='^[/!.@]cancel$'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -693,7 +693,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
  
  
-@client.on(events.NewMessage(pattern='^[/!.@]dayan$'))
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -701,7 +701,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
  
 		
-@client.on(events.NewMessage(pattern="^[/!.@]mtag$"))
+@client.on(events.NewMessage(pattern="^.mtag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -770,7 +770,7 @@ async def mentionall(event):
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"      
     if event.chat_id in rxyzdev_tagTot:await event.respond(f"**✅ Tağ Prosesi Uğurla Tamamlandı !.\n\n📊 Tağ Edilənlərin Sayı: {rxyzdev_tagTot[event.chat_id]}\n\n👤 Prosesi Başladan: {rxyzdev_initT}**")
   
-@client.on(events.NewMessage(pattern='^[/!.@]cancel$'))
+@client.on(events.NewMessage(pattern='^.cancel ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -778,7 +778,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
  
  
-@client.on(events.NewMessage(pattern='^[/!.@]dayan$'))
+@client.on(events.NewMessage(pattern='^.dayan ?(.*)'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -786,7 +786,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
  
 		
-@client.on(events.NewMessage(pattern="^[/!.@]rtag$"))
+@client.on(events.NewMessage(pattern="^.rtag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -872,7 +872,7 @@ async def cancel(event):
  
 
 
-@client.on(events.NewMessage(pattern="^[/!.@]etag$"))
+@client.on(events.NewMessage(pattern="^.etag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -957,7 +957,7 @@ async def cancel(event):
   if event.chat_id in rxyzdev_tagTot:await event.respond(f"✅**Tağ Prosesi Dayandırıldı.**\n\n📊 **Tağ Edilənərin Sayı:** `{rxyzdev_tagTot[event.chat_id]}`**")
  
 		
-@client.on(events.NewMessage(pattern="^[/!.@]sehidler$"))
+@client.on(events.NewMessage(pattern="^.sehidler ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
@@ -1044,7 +1044,7 @@ async def cancel(event):
  
 
 
-@client.on(events.NewMessage(pattern="^[/!.@]admin$"))
+@client.on(events.NewMessage(pattern="^.admin ?(.*)"))
 async def tag_admin(event):
     chat = await event.get_input_chat()
     text = "👮‍♂️ Qrup Adminlərinin Siyahısı \n\n"
