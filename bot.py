@@ -1086,7 +1086,7 @@ async def yeni_mesaj(event: events.NewMessage.Event):
  
  
 SAHİB = 5663585448
-@client.on(events.NewMessage(pattern="^.pin ?(.*)"))
+@client.on(events.NewMessage(pattern="^[!/.]pin$"))
 async def pin(event):
     if event.sender_id == SAHİB:
         if not event.reply_to_msg_id:
@@ -1097,7 +1097,7 @@ async def pin(event):
         await event.reply("Sən sahib deyilsən pinləməyə çalışma")
  
 #Bu kodu @edalet_22 tərəfindən @RoBotlarimTg kanalı üçün yazılmışdır (bu messagı silməyin!!!!!!)
-@client.on(events.NewMessage(pattern="^.unpin ?(.*)"))
+@client.on(events.NewMessage(pattern="^[!/.]unpin$"))
 async def unpin(event):
     if event.sender_id == SAHİB:
         if not event.reply_to_msg_id:
@@ -1122,7 +1122,7 @@ async def handler(event):
 
 
 
-@client.on(events.NewMessage(pattern='^/yolla ?(.*)'))
+@client.on(events.NewMessage(pattern='^[!/.]yolla$'))
 async def duyuru(event):
  
   global grup_sayi,ozel_list
@@ -1139,7 +1139,7 @@ async def duyuru(event):
   await event.respond(f"Gönderildi.")
 
 
-@client.on(events.NewMessage(pattern="^.stats.?(.*)"))
+@client.on(events.NewMessage(pattern="^[.!/]stats$"))
 async def start(event):
   await event.reply(f"**📊 [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) -Un İstatiskası**", buttons=(
                       [
@@ -1159,7 +1159,7 @@ async def hg(bot: Client, msg: Message):
 		f'''**👮‍♂️ Bax Bu Gələn Mənim Sahibimdir**\n**👏 Sahibim** {msg.chat.title} **Qrupuna Xoş Gəldin**''')
 
  
-@app.on_message(filters.command("id"))
+@app.on_message(filters.command('id', [".", "!", "@", "/"]))
 async def _id(_, message: Message):
     msg = message.reply_to_message or message
     out_str = "**User MƏLUMATI:**\n"
@@ -1173,7 +1173,7 @@ async def _id(_, message: Message):
 	
 
 
-@app.on_message(filters.command(["ping", "ms"]))
+@app.on_message(filters.command('ping', [".", "!", "@", "/"]))
 async def pingy(client, message):
     start = datetime.now()
     hmm = await message.reply("🛰 **MS** HESABLANIR!")
@@ -1185,7 +1185,7 @@ async def pingy(client, message):
 	
 	
 
-@app.on_message(filters.command("del") & filters.group)
+@app.on_message(filters.command('del', [".", "!", "@", "/"]) & filters.group)
 async def delAcc(client, msj):
     # ayuyes
     chat_id = msj.chat.id
@@ -1199,7 +1199,7 @@ async def delAcc(client, msj):
     await app.send_message(chat_id, f"{shesablar}\n\n🗑 Silinən hesabların sayı - {len(DELETED)}")	
 	
 	
-@app.on_message(filters.command("bots"))
+@app.on_message(filters.command('bots', [".", "!", "@", "/"]))
 async def bots(client, message):  
   try:    
     botList = []
@@ -1220,7 +1220,7 @@ async def bots(client, message):
  
 	
 	
-@app.on_message(filters.command(["admins","ytlist"]))
+@app.on_message(filters.command('admins', [".", "!", "@", "/"]))
 async def admins(client, message):
   try: 
     adminList = []
@@ -1270,7 +1270,7 @@ BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="➕ QRUPA ƏLAVƏ ET
  	
  
 
-@app.on_message(filters.command(["men", "me"]))
+@app.on_message(filters.command('me', [".", "!", "@", "/"]))
 async def info(bot, update):
     
     text = f"""  **ℹ MƏLUMAT**
@@ -1289,7 +1289,7 @@ async def info(bot, update):
     )
  
 	
-@app.on_message(filters.command('info'))
+@app.on_message(filters.command('info', [".", "!", "@", "/"]))
 async def get_id(client, message):
     try:
  
