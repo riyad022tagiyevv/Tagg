@@ -46,7 +46,6 @@ from mesaj.random import taım
 
 import secrets
 import aiohttp
-from cryptography.fernet import Fernet
 from kolge.komekci import random_line
  
  
