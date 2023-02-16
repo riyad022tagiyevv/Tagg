@@ -37,7 +37,7 @@ from pyrogram import Client as USER
 
 from pyrogram import enums
 from pyrogram.enums import ChatMemberStatus
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import pyrogram
 from datetime import datetime
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
