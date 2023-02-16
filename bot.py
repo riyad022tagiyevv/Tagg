@@ -1288,14 +1288,7 @@ async def get_id(client, message):
 ############### Broadcast araçları ###########
 
     
-################# SAHİP KOMUTLARI #############
- 
-# Verileri listeleme komutu
 
-@app.on_message(filters.command("alive"))
-async def alive(client, message):
-    await message.edit(f"Haycan {message.from_user.mention()}\nBot İşləyir Narahat olma")
- 
 
 
 
