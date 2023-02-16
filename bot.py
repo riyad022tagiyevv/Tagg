@@ -225,7 +225,7 @@ async def handler(event):
 
 @app.on_message(filters.command("meslehet"))
 async def meslehet(_, message):
-    await message.reply_text((await random_line('komekci/txt/meslehet.txt')))
+    await message.reply_text((await random_line('kolge/txt/meslehet.txt')))
  
  
 
