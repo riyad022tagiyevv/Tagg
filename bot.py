@@ -228,6 +228,11 @@ async def meslehet(_, message):
     await message.reply_text((await random_line('kolge/txt/meslehet.txt')))
  
  
+@app.on_message(filters.command("sehid"))
+async def meslehet(_, message):
+    await message.reply_text((await random_line('kolge/txt/sehid.txt')))
+ 
+ 
 
 
 @client.on(events.NewMessage())
