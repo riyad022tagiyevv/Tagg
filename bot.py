@@ -246,7 +246,7 @@ buton = InlineKeyboardMarkup(
 temas = InlineKeyboardMarkup(
             
                 [[InlineKeyboardButton(
-                        "♻️ DƏYİŞ" , callback_data= "temas"),
+                        "♻️ DƏYİŞ" , callback_data= "taimm"),
                     
                 InlineKeyboardButton(
                         "🔐 BAĞLA", callback_data= "close")]    
@@ -283,7 +283,7 @@ async def deyis(_, query: CallbackQuery):
     await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/meslehet.txt')}\n\n👤 **İSDƏYƏN:** {query.from_user.mention}", reply_markup=buton)
 
 
-@app.on_callback_query(filters.regex("temas"))
+@app.on_callback_query(filters.regex("taimm"))
 async def deyis(_, query: CallbackQuery):
     await query.edit_message_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n[🎨 𝕋𝔼𝕄𝔸 :   𝕋𝕆𝕏𝕌ℕ 👇]({await random_line('kolge/txt/tema.txt')})\n\n👤** İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
 
