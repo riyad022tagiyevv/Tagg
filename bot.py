@@ -245,7 +245,7 @@ async def commit(_, message):
 
 @app.on_callback_query(filters.regex("sehid"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text(f"🥀 **ŞƏHİD ADI İSDƏNİLDİ:**\n\n🥀 **ŞƏHİD:** {await random_line('kolge/txt/sehid.txt')}\n\n👤 **İSDƏYƏN:** {query.from_user.mention}", reply_markup=buton)
+    await query.edit_message_text(f"🥀 **ŞƏHİD ADI İSDƏNİLDİ:**\n\n🥀 **ŞƏHİD:** {await random_line('kolge/txt/sehid.txt')}\n\n👤 **İSDƏYƏN:** {query.from_user.mention}", reply_markup=button)
 
 
 
