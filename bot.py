@@ -269,7 +269,8 @@ async def deyis(_, query: CallbackQuery):
 
 
 
-@Client.on_callback_query(filters.regex("close"))
+
+@app.on_callback_query(filters.regex("close"))
 async def close_reply(msg, CallbackQuery):
     await CallbackQuery.message.delete()
  
