@@ -1308,13 +1308,18 @@ async def info(bot, update):
     
     text = f"""  **ℹ MƏLUMAT**
  
-**🙋🏻‍♂️ İsdifadəçi Adı:** {update.from_user.mention()}
-**🧖‍♂️ İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
-**🆔 Telegram ID :** `{update.from_user.id}`
-**🗒 Kulanıcı Adı :**  `@{update.from_user.username}`
-**🆔 Qrup İD :** `{(update.forward_from_chat or update.chat).id}`
-**🗨 Qrup Adı:** {update.chat.title}"""
-    
+
+🙋🏻‍♂️ **İsdifadəçi Adı:** {update.from_user.mention()}
+👥 **İkinci Ad :** {update.from_user.last_name if update.from_user.last_name else 'None'}
+🆔 **Telegram ID :** {update.from_user.id}
+🗒 **Kulanıcı Adı :** @{update.from_user.username}
+🌏 **DİL :** {update.from_user.language_code}
+📱 **M.NÖMRƏ :** {update.from_user.phone_number}
+🏷 **STATUS :** {str(update.from_user.status)[11:]}
+🆔 **Qrup İD :** {(update.forward_from_chat or update.chat).id}
+🗨 **Qrup Adı :** {update.chat.title}"""
+
+
     await update.reply_text(        
         text=text,
         disable_web_page_preview=True,
@@ -1338,7 +1343,7 @@ async def get_id(client, message):
     try:
  
         if (not message.reply_to_message) and (message.chat):
-            await message.reply(f"👤 **AD** {message.from_user.mention()}\n🖇 **TAĞ**: @{message.from_user.username}\n🆔️ **İD** <code>`{message.from_user.id }`</code>.\n🗨 **QRUP ADI:**  {message.chat.title}\n🗨 **QRUP İD:** <code>`{message.chat.id}</code>.",  reply_markup=infosil)
+            await message.reply(f"👤 **AD** {message.from_user.mention()}\n🖇 **TAĞ**: @{message.from_user.username}\n🆔️ **İD** <code>`{message.from_user.id }`</code>.\n🌏 **DİL:** {message.from_user.language.code}\n🗨 **QRUP ADI:**  {message.chat.title}\n🗨 **QRUP İD:** <code>`{message.chat.id}</code>.",  reply_markup=infosil)
         elif not message.reply_to_message:
             await message.reply(f"👤 - {message.from_user.mention}\n🆔️ - <code>`{message.from_user.id }`</code>.", reply_markup=infosil) 
  
@@ -1352,7 +1357,7 @@ async def get_id(client, message):
             await message.reply("Sorry, you cannot get the forwarded user ID because of their privacy settings", reply_markup=infosil)
  
         else:
-            await message.reply(f"👤 **AD**: {message.reply_to_message.from_user.mention}\n🖇 **TAĞ**: @{message.reply_to_message.from_user.username}\n🆔️ **İD**: <code>`{message.reply_to_message.from_user.id}`</code>\n🗨 **QRUP ADI**: {message.chat.title}", reply_markup=infosil)   
+            await message.reply(f"👤 **AD**: {message.reply_to_message.from_user.mention}\n🖇 **TAĞ**: @{message.reply_to_message.from_user.username}\n🆔️ **İD**: <code>`{message.reply_to_message.from_user.id}`</code>\n🌏 **DİL :** {message.from_user.language_code}\n📱 **M.NÖMRƏ:** {message.from_user.phone_number}\n🗨 **QRUP ADI**: {message.chat.title}", reply_markup=infosil)   
  
     except Exception:
             await message.reply("An error occured while getting the ID.", reply_markup=infosil)
