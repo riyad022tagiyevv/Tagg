@@ -232,7 +232,7 @@ buton = InlineKeyboardMarkup([
 
 @app.on_message(filters.command("meslehet", ["/", "!", "@", "."]))
 async def meslehet(_, message):
-    await message.reply_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=buton)
+    await message.reply_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/meslehet.txt'}\n\n👤 **İSDƏYƏN:** {message.from_user.mention}", reply_markup=buton)
  
  
 
@@ -245,13 +245,13 @@ async def commit(_, message):
 
 @app.on_callback_query(filters.regex("sehid"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text(f"🥀 **ŞƏHİD ADI İSDƏNİLDİ:**\n\n🥀 **ŞƏHİD:** {await random_line('kolge/txt/sehid.txt')}\n\n👤 **İSDƏYƏN:** {query.from_user.mention}", reply_markup=button)
+    await query.edit_message_text(f"🥀 **ŞƏHİD ADI İSDƏNİLDİ:**\n\n🥀 **ŞƏHİD:** {await random_line('kolge/txt/sehid.txt')}\n\n👤 **İSDƏYƏN:** {query.from_user.mention}", reply_markup=buton)
 
 
 
 @app.on_callback_query(filters.regex("meslehet"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text((await random_line('kolge/txt/meslehet.txt')), reply_markup=buton)
+    await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/meslehet.txt'}\n\n👤 **İSDƏYƏN:** {message.from_user.mention}", reply_markup=buton)
 
 
 
