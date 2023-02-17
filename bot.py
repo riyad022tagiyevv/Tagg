@@ -4,7 +4,7 @@ from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.tl.types import ChannelParticipantsBots
-İmport remove
+import remove
 from telethon.tl.functions.users import GetFullUserRequest
 
 from datetime import datetime
