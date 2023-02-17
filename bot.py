@@ -4,7 +4,6 @@ from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.tl.types import ChannelParticipantsBots
-import remove
 from telethon.tl.functions.users import GetFullUserRequest
 
 from datetime import datetime
@@ -15,7 +14,7 @@ from pyrogram.types import Message, User
 from pyrogram.types.messages_and_media import Message
 from pyrogram import Client, filters
 import time
-
+from os import remove
 import datetime
 import motor.motor_asyncio
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
@@ -1190,7 +1189,7 @@ async def pingy(client, message):
 	
 	
 
-@client.on(events.NewMessage(pattern="^.del ?(.*)"))
+@client.on(events.NewMessage(pattern="^.banda ?(.*)"))
 async def banda(event):
     if not event.is_group:
         return await event.reply("Bu əmr qruplar üçün etibarlıdır!")
@@ -1209,7 +1208,7 @@ async def banda(event):
 	
 
 
-@app.on_message(filters.command('banda', [".", "!", "@", "/"]) & filters.group)
+@app.on_message(filters.command('del', [".", "!", "@", "/"]) & filters.group)
 async def delAcc(client, msj):
     # ayuyes
     chat_id = msj.chat.id
