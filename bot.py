@@ -1211,21 +1211,7 @@ async def close_reply(msg, CallbackQuery):
 	
 	
 
-@app.on(events.NewMessage(pattern="^.banda ?(.*)"))
-async def banda(event):
-    if not event.is_group:
-        return await event.reply("Bu əmr qruplar üçün etibarlıdır!")
-    info = await event.client.get_entity(event.chat_id)
-    title = info.title if info.title else "This chat"
-    mentions = f'**{title}** qrupunda olan silinmiş hesaplar:\n'
-    deleted = 0
-    async for user in event.client.iter_participants(event.chat_id):
-        if user.deleted:
-            mentions += f"\n🗑 Silinmiş hesap `{user.id}`"
-            deleted += 1
-            await event.client.kick_participant(event.chat_id, user.id)
-    mentions += f"\n🗑 Silinmiş hesaplar` = {deleted}"
-    await event.reply(mentions)
+
     
 	
 
