@@ -256,7 +256,7 @@ temas = InlineKeyboardMarkup(
 
 @app.on_message(filters.command("tema", ["/", "!", "@", "."]))
 async def commit(_, message): 
-    await message.reply_text(f"🤖 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n[🎨 𝕋𝔼𝕄𝔸 :   𝕋𝕆𝕏𝕌ℕ 👇]({await random_line('kolge/txt/tema.txt')})\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
+    await message.reply_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n[🎨 𝕋𝔼𝕄𝔸 :   𝕋𝕆𝕏𝕌ℕ 👇]({await random_line('kolge/txt/tema.txt')})\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
 
 
 @app.on_message(filters.command("meslehet", ["/", "!", "@", "."]))
@@ -285,7 +285,7 @@ async def deyis(_, query: CallbackQuery):
 
 @app.on_callback_query(filters.regex("tema"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text(f"🤖 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  *SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n[🎨 𝕋𝔼𝕄𝔸 :  * 𝕋𝕆𝕏𝕌ℕ 👇]({await random_line('kolge/txt/tema.txt')})\n\n👤** İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
+    await query.edit_message_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n[🎨 𝕋𝔼𝕄𝔸 :   𝕋𝕆𝕏𝕌ℕ 👇]({await random_line('kolge/txt/tema.txt')})\n\n👤** İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
 
 
 @app.on_callback_query(filters.regex("close"))
@@ -1098,7 +1098,7 @@ async def tag_admin(event):
 
  
  
-@client.on(events.NewMessage(pattern='(?i)/tema+'))
+@client.on(events.NewMessage(pattern='(?i)/temaa+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
     await event.respond(f"\n💁‍♂️ [𝐗𝐀𝐎𝐒](https://t.me/XAOS_Tagbot) **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDi**\n\n🎨  [TEMA  -  TOXUN 👇]({random.choice(taım)})",
 		      buttons=(
