@@ -224,13 +224,25 @@ async def handler(event):
                     link_preview=False)
 
 
-button = InlineKeyboardMarkup([
-    [InlineKeyboardButton("♻️ DƏYİŞ", callback_data="sehid")]
-])
+button = InlineKeyboardMarkup(
+            
+                [[InlineKeyboardButton(
+                        "♻️ DƏYİŞ" , callback_data= "sehid"),
+                    
+                InlineKeyboardButton(
+                        "🔐 BAĞLA", callback_data= "close")]    
+            ])
 
-buton = InlineKeyboardMarkup([
-    [InlineKeyboardButton("♻️ DƏYİŞ", callback_data="meslehet")]
-])
+
+buton = InlineKeyboardMarkup(
+            
+                [[InlineKeyboardButton(
+                        "♻️ DƏYİŞ" , callback_data= "meslehet"),
+                    
+                InlineKeyboardButton(
+                        "🔐 BAĞLA", callback_data= "close")]    
+            ])
+
 
 @app.on_message(filters.command("meslehet", ["/", "!", "@", "."]))
 async def meslehet(_, message):
@@ -257,7 +269,11 @@ async def deyis(_, query: CallbackQuery):
 
 
 
-
+@Client.on_callback_query(filters.regex("close"))
+async def close_reply(msg, CallbackQuery):
+    await CallbackQuery.message.delete()
+ 
+	
 
 @client.on(events.NewMessage())
 async def mentionalladmin(event):
