@@ -1191,7 +1191,9 @@ async def _id(_, message: Message):
     await message.reply(out_str)
 	
 
-
+mssil = InlineKeyboardMarkup([
+    [InlineKeyboardButton("🔐  BAĞLA", callback_data="close")]
+])
 @app.on_message(filters.command('ping', [".", "!", "@", "/"]))
 async def pingy(client, message):
     start = datetime.now()
@@ -1199,14 +1201,17 @@ async def pingy(client, message):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await hmm.edit(
-        f"█▀█ █ █▄░█ █▀▀ █ \n█▀▀ █ █░▀█ █▄█ ▄\n\n**🛰 Ping: {round(ms)}**")
+        f"█▀█ █ █▄░█ █▀▀ █ \n█▀▀ █ █░▀█ █▄█ ▄\n\n**🛰 Ping: {round(ms)}**", reply_markup=mssil)
   
-	
+@app.on_callback_query(filters.regex("close"))
+async def close_reply(msg, CallbackQuery):
+    await CallbackQuery.message.delete()
+ 
 
 	
 	
 
-@client.on(events.NewMessage(pattern="^.banda ?(.*)"))
+@app.on(events.NewMessage(pattern="^.banda ?(.*)"))
 async def banda(event):
     if not event.is_group:
         return await event.reply("Bu əmr qruplar üçün etibarlıdır!")
@@ -1306,9 +1311,11 @@ async def admins(client, message):
   except FloodWait as e:
     await asyncio.sleep(e.value)
 	
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="➕ QRUPA ƏLAVƏ ET➕", url=f"https://t.me/XAOS_Tagbot?startgroup=a")]])
- 	
+
  
+mesil = InlineKeyboardMarkup([
+    [InlineKeyboardButton("🔐  BAĞLA", callback_data="close")]
+])
 
 @app.on_message(filters.command('me', [".", "!", "@", "/"]))
 async def info(bot, update):
@@ -1325,36 +1332,50 @@ async def info(bot, update):
     await update.reply_text(        
         text=text,
         disable_web_page_preview=True,
-        reply_markup=BUTTONS
+        reply_markup=mesil
     )
  
+@app.on_callback_query(filters.regex("close"))
+async def close_reply(msg, CallbackQuery):
+    await CallbackQuery.message.delete()
+ 
 	
+	
+	
+
+infosil = InlineKeyboardMarkup([
+    [InlineKeyboardButton("🔐  BAĞLA", callback_data="close")]
+])
+
 @app.on_message(filters.command('info', [".", "!", "@", "/"]))
 async def get_id(client, message):
     try:
  
         if (not message.reply_to_message) and (message.chat):
-            await message.reply(f"👤 **AD** {message.from_user.mention()}\n🖇 **TAĞ**: @{message.from_user.username}\n🆔️ **İD** <code>`{message.from_user.id }`</code>.\n🗨 **QRUP ADI:**  {message.chat.title}\n🗨 **QRUP İD:** <code>`{message.chat.id}</code>.") 
+            await message.reply(f"👤 **AD** {message.from_user.mention()}\n🖇 **TAĞ**: @{message.from_user.username}\n🆔️ **İD** <code>`{message.from_user.id }`</code>.\n🗨 **QRUP ADI:**  {message.chat.title}\n🗨 **QRUP İD:** <code>`{message.chat.id}</code>.",  reply_markup=infosil)
         elif not message.reply_to_message:
-            await message.reply(f"👤 - {message.from_user.mention}\n🆔️ - <code>`{message.from_user.id }`</code>.") 
+            await message.reply(f"👤 - {message.from_user.mention}\n🆔️ - <code>`{message.from_user.id }`</code>.", reply_markup=infosil) 
  
         elif message.reply_to_message.forward_from_chat:
-            await message.reply(f"🔖 **KANAL ADI** {str(message.reply_to_message.forward_from_chat.type)[9:].lower()}, {message.reply_to_message.forward_from_chat.title}\n🆔️ **KANAL İD** <code>`{message.reply_to_message.forward_from_chat.id}`</code>.") 
+            await message.reply(f"🔖 **KANAL ADI** {str(message.reply_to_message.forward_from_chat.type)[9:].lower()}, {message.reply_to_message.forward_from_chat.title}\n🆔️ **KANAL İD** <code>`{message.reply_to_message.forward_from_chat.id}`</code>.", reply_markup=infosil)
  
         elif message.reply_to_message.forward_from:
-            await message.reply(f"The forwarded user, {message.reply_to_message.forward_from.first_name} has an ID of <code>{message.reply_to_message.forward_from.id   }</code>.")
+            await message.reply(f"The forwarded user, {message.reply_to_message.forward_from.first_name} has an ID of <code>{message.reply_to_message.forward_from.id   }</code>.", reply_markup=infosil)
  
         elif message.reply_to_message.forward_sender_name:
-            await message.reply("Sorry, you cannot get the forwarded user ID because of their privacy settings")
+            await message.reply("Sorry, you cannot get the forwarded user ID because of their privacy settings", reply_markup=infosil)
  
         else:
-            await message.reply(f"👤 **AD**: {message.reply_to_message.from_user.mention}\n🖇 **TAĞ**: @{message.reply_to_message.from_user.username}\n🆔️ **İD**: <code>`{message.reply_to_message.from_user.id}`</code>\n🗨 **QRUP ADI**: {message.chat.title}")   
+            await message.reply(f"👤 **AD**: {message.reply_to_message.from_user.mention}\n🖇 **TAĞ**: @{message.reply_to_message.from_user.username}\n🆔️ **İD**: <code>`{message.reply_to_message.from_user.id}`</code>\n🗨 **QRUP ADI**: {message.chat.title}", reply_markup=infosil)   
  
     except Exception:
-            await message.reply("An error occured while getting the ID.")
+            await message.reply("An error occured while getting the ID.", reply_markup=infosil)
  
 
-
+@app.on_callback_query(filters.regex("close"))
+async def close_reply(msg, CallbackQuery):
+    await CallbackQuery.message.delete()
+ 
 
 
 
