@@ -223,33 +223,7 @@ async def handler(event):
                     ),
                     link_preview=False)
 
-
-
-@app.on_message(filters.command("test"))
-async def start(_, message):
-                await message.reply_photo((await random_line('kolge/txt/bio.txt')),
-                caption=(f"""**İCRAÇI:  {message.from_user.mention}**"""),
-         reply_markup=InlineKeyboardMarkup(
-            [
-                
-                
-	        [
-                    InlineKeyboardButton(
-                        "🔐 BAĞLA", callback_data= "close"
-                    )
-                ]
-                
-           ]
-        ),
-    )
   
- 
-
-
-
-
-
-     
     
   
 button = InlineKeyboardMarkup(
@@ -280,20 +254,26 @@ temas = InlineKeyboardMarkup(
                         "🔐 BAĞLA", callback_data= "close")]    
             ])
 
-bio = InlineKeyboardMarkup(
-            
-                [[InlineKeyboardButton(
-                        "🔐 BAĞLA" , callback_data= "close")]
-                    
-                    
-            ])
 
 
+@app.on_message(filters.command("pp", ["!", "/", "@", "."]))
+async def start(_, message):
+                await message.reply_photo((await random_line('kolge/txt/bio.txt')),
+                caption=(f"""**🖼  {message.from_user.mention} Üçün Random Olaraq Profil Şəkli Seçildi**"""),
+         reply_markup=InlineKeyboardMarkup(
+            [
+                
+                
+	        [
+                    InlineKeyboardButton(
+                        "🔐 BAĞLA", callback_data= "close"
+                    )
+                ]
+                
+           ]
+        ),
+    )
 
-
-@app.on_message(filters.command("bioo", ["/", "!", "@", "."]))
-async def bio(_, message):
-    await message.reply_photo((await random_line('kolge/txt/bio.txt')), caption=(f"👤 **İCRAÇI:** {message.from_user.mention}"), reply_markup=bio)
 
 		 
 @app.on_message(filters.command("tema", ["/", "!", "@", "."]))
