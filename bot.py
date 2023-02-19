@@ -5,9 +5,9 @@ from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.tl.types import ChannelParticipantsBots
 from telethon.tl.functions.users import GetFullUserRequest
-
+from time import time
 from datetime import datetime
-
+from random import choice
 from pyrogram import filters
 from pyrogram.errors import PeerIdInvalid
 from pyrogram.types import Message, User
