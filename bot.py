@@ -9,7 +9,7 @@ from time import time
 from datetime import datetime
 from random import choice
 from pyrogram import filters
-from pyrogram.errors import PeerIdInvalid, FloodWait
+from pyrogram.errors import PeerIdInvalid
 from pyrogram.types import Message, User
 from pyrogram.types.messages_and_media import Message
 from pyrogram import Client, filters
