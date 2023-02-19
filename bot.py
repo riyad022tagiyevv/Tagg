@@ -44,7 +44,7 @@ import pyrogram
 from datetime import datetime
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
 from mesaj.tag import soz, heyvan, emoji, bayrag, mafia, seher, sehidler
-from mesaj.random import taım
+from mesaj.random import taım, foto
 
 import secrets
 import aiohttp
@@ -366,6 +366,16 @@ async def deyis(_, query: CallbackQuery):
 async def deyis(_, query: CallbackQuery):
     await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot) **Dan Sizin Üçün Random Olaraq Musiqi Sözləri:**\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=bio)
 
+
+@app.on_message(filters.command(["pp"]))
+async def pp(bot: app, m: Message):
+    start = time()
+    replymsg = await m.reply_text("**❤ Rondom Profil Şəkili Seçilir...**")
+    end = round(time() - start, 2)
+    photo = random.choice(foto)
+    text = f"❤️ XAOS **Sizin Üçün Profil Şəkili Seçdi**"
+    await bot.send_photo(m.chat.id, photo=photo, caption=text)
+    await replymsg.delete()
 
 @app.on_callback_query(filters.regex("close"))
 async def close_reply(msg, CallbackQuery):
