@@ -277,6 +277,16 @@ bio = InlineKeyboardMarkup(
             ])
 
 
+mahni = InlineKeyboardMarkup(
+            
+                [[InlineKeyboardButton(
+                        "♻️ DƏYİŞ" , callback_data= "mahni"),
+                    
+                InlineKeyboardButton(
+                        "🔐 BAĞLA", callback_data= "close")]    
+            ])
+
+
 
 @app.on_message(filters.command("pp", ["!", "/", "@", "."]))
 async def start(_, message):
@@ -297,7 +307,12 @@ async def start(_, message):
     )
 
 
-	
+		
+@app.on_message(filters.command("mahni", ["/", "!", "@", "."]))
+async def commit(_, message): 
+    await message.reply_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot) **Dan Sizin Üçün Random Olaraq Musiqi Sözləri:**\n\n{await random_line('kolge/txt/mahni.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=bio)
+		
+		
 @app.on_message(filters.command("bio", ["/", "!", "@", "."]))
 async def commit(_, message): 
     await message.reply_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=bio)
@@ -346,6 +361,10 @@ async def deyis(_, query: CallbackQuery):
 @app.on_callback_query(filters.regex("bio"))
 async def deyis(_, query: CallbackQuery):
     await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=bio)
+
+@app.on_callback_query(filters.regex("mahni"))
+async def deyis(_, query: CallbackQuery):
+    await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot) **Dan Sizin Üçün Random Olaraq Musiqi Sözləri:**\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=bio)
 
 
 @app.on_callback_query(filters.regex("close"))
