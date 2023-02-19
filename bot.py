@@ -226,21 +226,6 @@ async def handler(event):
   
 	
 	
-@client.on(events.NewMessage(pattern="^.sevgi ?(.*)"))
-async def sevgi(event):
-    if event.fwd_from:
-        return
-    animation_interval = 0.5
-    animation_ttl = range(0, 8)
-    input_str = event.pattern_match.group(1)
-    await event.edit("💙❤️🧡💛💜💚")
-    animation_chars = ["`💛Sevgilim💛`","`🧡Həyatım🧡`","`💙Ömrüm💙`","`💚Balım💚`","`💜Ürəyim💜`","`🤍Canım🤍`","`❤️Hərşeyim❤️`","💙Səni Çox Sevirəm  " + input_str + "💛 ",
- ]
-    for i in animation_ttl:
-        await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 8])
-
-	
 
     
   
