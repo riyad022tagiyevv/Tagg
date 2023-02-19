@@ -249,7 +249,7 @@ async def tgsil(event):
 "📈📉statiskalar silinir...",
 "Qruplardan cıxıldı.",
 "Hesab uğurlar silindi...!"]
-    await event.edit("Bir mesaj var")
+    await event.edit("Bir mesaj Var")
     nanim = ""
     for anim in ANIMASYON:
         nanim += anim + " " # 
