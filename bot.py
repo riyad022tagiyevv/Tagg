@@ -269,7 +269,7 @@ masin = InlineKeyboardMarkup(
             ])
 
 
-@app.onmessage(filters.command("masin"))
+@app.on_message(filters.command("masin"))
 async def masin(_, message):
     await message.reply_text(f"butonu sec {mesaage.fron_user.mention}", reply_markup=masin)
 
