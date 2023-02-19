@@ -263,7 +263,7 @@ bio = InlineKeyboardMarkup(
 
 
 
-@app.on_message(filters.command("bio", ["/", "!", "@", ".",]))
+@app.on_message(filters.command("bio", ["/", "!", "@", "."]))
 async def bio(_, message):
     await message.reply_photo((await random_line('kolge/txt/bio.txt')), caption=(f"👤 **İCRAÇI:** {message.from_user.mention}"), reply_markup=bio)
 
