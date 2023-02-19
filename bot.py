@@ -258,23 +258,6 @@ temas = InlineKeyboardMarkup(
             ])
 
 
-masin = InlineKeyboardMarkup(
-            
-                [[InlineKeyboardButton(
-                        "🚘 BMW" , callback_data= "bmw"),
-                    
-                InlineKeyboardButton(
-                        "🚘 MERCEES", callback_data= "mersedes")]
-	
-            ])
-
-
-@app.on_message(filters.command("masin"))
-async def masin(_, message):
-    await message.reply_text(f"butonu sec {message.fron_user.mention}", reply_markup=masin)
-
-
-
 @app.on_message(filters.command("pp", ["!", "/", "@", "."]))
 async def start(_, message):
                 await message.reply_photo((await random_line('kolge/txt/bio.txt')),
@@ -297,7 +280,7 @@ async def start(_, message):
 		 
 @app.on_message(filters.command("tema", ["/", "!", "@", "."]))
 async def commit(_, message): 
-    await message.reply_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
+    await message.reply_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n\n[XAOS TEMA]({await random_line('kolge/txt/tema.txt')})\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
 
 
 @app.on_message(filters.command("meslehet", ["/", "!", "@", "."]))
