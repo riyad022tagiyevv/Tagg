@@ -227,8 +227,7 @@ async def handler(event):
 
 @app.on_message(filters.command("test"))
 async def start(_, message):
-                await message.reply_photo(
-                "https://te.legra.ph/file/7c24db2c84218935a8ac4.jpg",
+                await message.reply_photo((await random_line('kolge/txt/bio.txt')),
                 caption=(f"""**İCRAÇI:  {message.from_user.mention}**"""),
          reply_markup=InlineKeyboardMarkup(
             [
