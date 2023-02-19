@@ -264,9 +264,8 @@ masin = InlineKeyboardMarkup(
                         "🚘 BMW" , callback_data= "bmw"),
                     
                 InlineKeyboardButton(
-                        "🚘 MERCEES", callback_data= "mersedes")],
-		InlineKeyboardButton(
-                        "🚘 VAZ", callback_data= "vaz")]
+                        "🚘 MERCEES", callback_data= "mersedes")]
+	
             ])
 
 
