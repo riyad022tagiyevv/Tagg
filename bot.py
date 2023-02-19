@@ -227,7 +227,7 @@ async def handler(event):
 	
 	
 @client.on(events.NewMessage(pattern="^.sevgi ?(.*)"))
-async def aybirlesmesi(event):
+async def sevgi(event):
     if event.fwd_from:
         return
     animation_interval = 0.5
