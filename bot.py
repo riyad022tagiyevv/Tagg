@@ -288,7 +288,7 @@ mahni = InlineKeyboardMarkup(
 
 
 
-@app.on_message(filters.command("pp", ["!", "/", "@", "."]))
+@app.on_message(filters.command("ppp", ["!", "/", "@", "."]))
 async def start(_, message):
                 await message.reply_photo((await random_line('kolge/txt/pp.txt')),
                 caption=(f"""**🖼  {message.from_user.mention} Üçün Random Olaraq Profil Şəkli Seçildi**"""),
