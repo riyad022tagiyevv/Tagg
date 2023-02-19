@@ -224,6 +224,53 @@ async def handler(event):
                     link_preview=False)
 
 
+
+
+
+
+
+@app.on_message(filters.command("bio"))
+async def bio(_, message):
+                await message.reply_photo(
+                "https://te.legra.ph/file/7c24db2c84218935a8ac4.jpg",
+                caption=(f"""**Salam {message.from_user.mention} 🎵\nMən {bot}!\nSəsli söhbətlərdə musiqi oxuyan botam. Ban yetkisiz, Səs yetkisi verib, Asistanı qrupa əlavə edin.\n\nSahibim👉  [Ulvi](https://t.me/BrendUIvi)**"""),
+         reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "➕ ❰ Məni Qrupa Əlavə Et ❱ ➕", url=f"https://t.me/Morfin_Music_Bot?startgroup=true"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        "🔊 Asistan", url="https://t.me/MorfinMusicAsistant"
+                    ),
+                    InlineKeyboardButton(
+                        "Qrup", url="https://t.me/MorphinChat"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        "🧩 Əmrlər" , callback_data= "cbbilgi"
+                    ),
+                    InlineKeyboardButton(
+                        "Rəsmi Kanal ", url=f"https://t.me/UlviiBlogs"
+                    )
+                ]
+                
+           ]
+        ),
+    )
+  
+
+
+
+
+
+
+
+
+
 button = InlineKeyboardMarkup(
             
                 [[InlineKeyboardButton(
@@ -263,7 +310,7 @@ bio = InlineKeyboardMarkup(
 
 
 
-@app.on_message(filters.command("bio", ["/", "!", "@", "."]))
+@app.on_message(filters.command("bioo", ["/", "!", "@", "."]))
 async def bio(_, message):
     await message.reply_photo((await random_line('kolge/txt/bio.txt')), caption=(f"👤 **İCRAÇI:** {message.from_user.mention}"), reply_markup=bio)
 
