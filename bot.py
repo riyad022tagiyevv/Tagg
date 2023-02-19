@@ -1171,7 +1171,7 @@ async def cancel(event):
 
 
 
-@app.on_message(filters.command("ship") & filters.group)
+@app.on_message(filters.command("ship"))
 async def my_handler(client, msj):
     chat_id = msj.chat.id
  
