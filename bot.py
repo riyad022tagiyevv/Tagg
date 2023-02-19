@@ -257,6 +257,16 @@ temas = InlineKeyboardMarkup(
                         "🔐 BAĞLA", callback_data= "close")]    
             ])
 
+sev = InlineKeyboardMarkup(
+            
+                [[InlineKeyboardButton(
+                        "♻️ DƏYİŞ" , callback_data= "sevgi"),
+                    
+                InlineKeyboardButton(
+                        "🔐 BAĞLA", callback_data= "close")]    
+            ])
+
+
 
 @app.on_message(filters.command("pp", ["!", "/", "@", "."]))
 async def start(_, message):
@@ -277,7 +287,13 @@ async def start(_, message):
     )
 
 
-		 
+	
+	
+@app.on_message(filters.command("sevgi", ["/", "!", "@", "."]))
+async def commit(_, message): 
+    await message.reply_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/sevgi.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=sev)
+	
+	
 @app.on_message(filters.command("tema", ["/", "!", "@", "."]))
 async def commit(_, message): 
     await message.reply_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
@@ -306,6 +322,11 @@ async def deyis(_, query: CallbackQuery):
 @app.on_callback_query(filters.regex("taimm"))
 async def deyis(_, query: CallbackQuery):
     await query.edit_message_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤** İSDƏDİ:**  {query.from_user.mention}", reply_markup=temas)
+
+
+@app.on_callback_query(filters.regex("sevgi"))
+async def deyis(_, query: CallbackQuery):
+    await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/sevgi.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=sev)
 
 
 @app.on_callback_query(filters.regex("close"))
