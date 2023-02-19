@@ -236,26 +236,13 @@ async def bio(_, message):
                 caption=(f"""**Salam {message.from_user.mention} 🎵\nMən !\nSəsli söhbətlərdə musiqi oxuyan botam. Ban yetkisiz, Səs yetkisi verib, Asistanı qrupa əlavə edin.\n\nSahibim👉  [Ulvi](https://t.me/BrendUIvi)**"""),
          reply_markup=InlineKeyboardMarkup(
             [
+                
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Məni Qrupa Əlavə Et ❱ ➕", url=f"https://t.me/Morfin_Music_Bot?startgroup=true"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/MorfinMusicAsistant"
-                    ),
-                    InlineKeyboardButton(
-                        "Qrup", url="https://t.me/MorphinChat"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🧩 Əmrlər" , callback_data= "cbbilgi"
-                    ),
-                    InlineKeyboardButton(
-                        "Rəsmi Kanal ", url=f"https://t.me/UlviiBlogs"
-                    )
+                        "🔐 BAĞLA" , callback_data= "close"
+                    )]
+                    
+                    
                 ]
                 
            ]
