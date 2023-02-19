@@ -229,22 +229,24 @@ async def handler(event):
 
 
 
-@app.on_message(filters.command("bio"))
-async def bio(_, message):
+@Client.on_message(command(["start", f"start@{BOT_USERNAME}"]))
+async def start(_, message: Message):
                 await message.reply_photo(
                 "https://te.legra.ph/file/7c24db2c84218935a8ac4.jpg",
-                caption=(f"""**Salam {message.from_user.mention} 🎵\nMən !\nSəsli söhbətlərdə musiqi oxuyan botam. Ban yetkisiz, Səs yetkisi verib, Asistanı qrupa əlavə edin.\n\nSahibim👉  [Ulvi](https://t.me/BrendUIvi)**"""),
-         reply_markup=bio)
+                caption=(f"""**Salam {message.from_user.mention} 🎵\nMən {bot}!\nSəsli söhbətlərdə musiqi oxuyan botam. Ban yetkisiz, Səs yetkisi verib, Asistanı qrupa əlavə edin.\n\nSahibim👉  [Ulvi](https://t.me/BrendUIvi)**"""),
+         reply_markup=InlineKeyboardMarkup(
+            [
+                
+                [
+                    InlineKeyboardButton(
+                        "🔐 BAĞLA" , callback_data= "close"
+                    )
+                    
+                
+           ]
+        ),
+    )
   
-
-
-
-
-
-
-
-
-
 button = InlineKeyboardMarkup(
             
                 [[InlineKeyboardButton(
