@@ -258,6 +258,23 @@ temas = InlineKeyboardMarkup(
             ])
 
 
+masin = InlineKeyboardMarkup(
+            
+                [[InlineKeyboardButton(
+                        "🚘 BMW" , callback_data= "bmw"),
+                    
+                InlineKeyboardButton(
+                        "🚘 MERCEES", callback_data= "mersedes")],
+		InlineKeyboardButton(
+                        "🚘 VAZ", callback_data= "vaz")]
+            ])
+
+
+@app.onmessage(filters.command("masin"))
+async def masin(_, message):
+    await message.reply_text(f"butonu sec {mesaage.fron_user.mention}", reply_markup=masin)
+
+
 
 @app.on_message(filters.command("pp", ["!", "/", "@", "."]))
 async def start(_, message):
