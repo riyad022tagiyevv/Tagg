@@ -236,16 +236,15 @@ async def start(_, message):
                 caption=(f"""**Salam {message.from_user.mention} 🎵\nMən !\nSəsli söhbətlərdə musiqi oxuyan botam. Ban yetkisiz, Səs yetkisi verib, Asistanı qrupa əlavə edin.\n\nSahibim👉  [Ulvi](https://t.me/BrendUIvi)**"""),
          reply_markup=InlineKeyboardMarkup(
             [
-                
                 [
                     InlineKeyboardButton(
-                        "🔐 BAĞLA" , callback_data= "close"
-                    )
+                        "🔐 BAĞLA" , callback_data= "close")]
+                    
                     
                 
-           ]
-        ),
-    )
+           ])
+        
+    
   
 button = InlineKeyboardMarkup(
             
