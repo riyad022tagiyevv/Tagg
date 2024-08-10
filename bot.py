@@ -112,13 +112,13 @@ async def start(event):
   if event.is_private:
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-  await event.reply(f"**👋 Salam {ad}\nMən  𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ**\n**𝕏𝔸𝕆𝕊 Federasiyasının Rəsmi Tağ botuyam**\n**⚡ 𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm**\n**Əmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun**\n**ℹ Mənim Qruplarda Asan Və Sürətli İşləyə Bilməyim Üçün Mənə Qrupunuzda Sadə Adminlik Vermənizi Rica Edirem**",
+  await event.reply(f"**👋 Salam {ad}\nMən  N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿**\n**N A Z R Y N Federasiyasının Rəsmi Tağ botuyam**\n**⚡ N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿 İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm**\n**Əmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun**\n**ℹ Mənim Qruplarda Asan Və Sürətli İşləyə Bilməyim Üçün Mənə Qrupunuzda Sadə Adminlik Vermənizi Rica Edirem**",
                     buttons=(
 			    
-		      [Button.url('➕ ℚℝ𝕌ℙ𝔸 𝔼𝕃𝔸𝕍𝔼 𝔼𝕋 ➕', 'https://t.me/XAOS_Tagbot?startgroup=a'),
-                      Button.url('⚡ 𝕏𝔸𝕆𝕊 𝔽𝔹𝔸ℕ', f'https://t.me/XaosResmii')],
-                      [Button.url('🇦🇿 𝕆𝕎ℕ𝔼ℝ 👨‍💻', f'https://t.me/sesizKOLGE'),
-                      Button.inline("⚙ Ə𝕄ℝ𝕃Əℝ", data="help")],
+		      [Button.url('➕ Qrupa Əlavə Et ➕', 'https://t.me/XAOS_Tagbot?startgroup=a'),
+                      Button.url('🦁 D͏əs͏t͏ək͏', f'https://t.me/nezrinsupp')],
+                      [Button.url('🇦🇿 ᴋᴜʀᴜᴄᴜ 🚫', f'https://t.me/hmnevar'),
+                      Button.inline("⚙ Əmrlər", data="help")],
                     ),
                     link_preview=False
 		   )
@@ -128,12 +128,12 @@ async def handler(event):
   if event.is_private:
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-    await event.edit(f"**👋 Salam {ad}\n ⚡Mən  𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ**\n**𝕏𝔸𝕆𝕊 Federasiyasının Rəsmi Tağ botuyam**\n**⚡ 𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm**\n**ℹƏmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun**\n**ℹ Mənim Qruplarda Asan Və Sürətli İşləyə Bilməyim Üçün Mənə Qrupunuzda Sadə Adminlik Vermənizi Rica Edirem**", buttons=(
+    await event.edit(f"**👋 Salam {ad}\n ⚡Mən  N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿**\n**N A Z R Y N Federasiyasının Rəsmi Tağ botuyam**\n**⚡ N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿 İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm**\n**ℹƏmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun**\n**ℹ Mənim Qruplarda Asan Və Sürətli İşləyə Bilməyim Üçün Mənə Qrupunuzda Sadə Adminlik Vermənizi Rica Edirem**", buttons=(
                       
-                      [Button.url('➕ ℚℝ𝕌ℙ𝔸 𝔼𝕃𝔸𝕍𝔼 𝔼𝕋 ➕', 'https://t.me/XAOS_Tagbot?startgroup=a'),
-                      Button.url('⚡ 𝕏𝔸𝕆𝕊 𝔽𝔹𝔸ℕ', f'https://t.me/XaosResmii')],
-                      [Button.url('🇦🇿 𝕆𝕎ℕ𝔼ℝ 👨‍💻', f'https://t.me/sesizKOLGE'),	             
-                      Button.inline("⚙ Ə𝕄ℝ𝕃Əℝ", data="help")],
+                      [Button.url('➕ Qrupa Əlavə Et ➕', 'https://t.me/nezrintaggerbot?startgroup=a'),
+                      Button.url('💞 Dəstək', f'https://t.me/nezrinsupp')],
+                      [Button.url('🇦🇿 ᴋᴜʀᴜᴄᴜ 🚫', f'https://t.me/hmnevar'),	             
+                      Button.inline("⚙ Əmrlər", data="help")],
                     ),
                     link_preview=False)
  
@@ -310,27 +310,27 @@ async def start(_, message):
 		
 @app.on_message(filters.command("mahni", ["/", "!", "@", "."]))
 async def commit(_, message): 
-    await message.reply_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot) **Dan Sizin Üçün Random Olaraq Musiqi Sözləri:**\n\n{await random_line('kolge/txt/mahni.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=bio)
+    await message.reply_text(f"[❤ N A Z R Y N](https://t.me/nezrintaggerbot) **Dan Sizin Üçün Random Olaraq Musiqi Sözləri:**\n\n{await random_line('kolge/txt/mahni.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=bio)
 		
 		
 @app.on_message(filters.command("bio", ["/", "!", "@", "."]))
 async def commit(_, message): 
-    await message.reply_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=bio)
+    await message.reply_text(f"[❤ N A Z R Y N](https://t.me/NezrinTaggerBot)\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=bio)
 		
 	
 @app.on_message(filters.command("sevgi", ["/", "!", "@", "."]))
 async def commit(_, message): 
-    await message.reply_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/sevgi.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=sev)
+    await message.reply_text(f"[❤ N A Z R Y N](https://t.me/NezrinTaggerbot)\n\n{await random_line('kolge/txt/sevgi.txt')}\n\n👤 **TƏLƏB:**  {message.from_user.mention}", reply_markup=sev)
 	
 	
 @app.on_message(filters.command("tema", ["/", "!", "@", "."]))
 async def commit(_, message): 
-    await message.reply_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
+    await message.reply_text(f"🤖 [N A Z R Y N](https://t.me/NezrinTaggerbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
 
 
 @app.on_message(filters.command("meslehet", ["/", "!", "@", "."]))
 async def meslehet(_, message):
-    await message.reply_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/meslehet.txt')}\n\n👤 **İSDƏYƏN:** {message.from_user.mention}", reply_markup=buton)
+    await message.reply_text(f"[❤ N A Z R Y N](https://t.me/nezrintaggerbot)\n\n{await random_line('kolge/txt/meslehet.txt')}\n\n👤 **İSDƏYƏN:** {message.from_user.mention}", reply_markup=buton)
  
  
 @app.on_message(filters.command("sehid", ["/", "!", "@", "."]))
@@ -345,7 +345,7 @@ async def deyis(_, query: CallbackQuery):
 
 @app.on_callback_query(filters.regex("meslehet"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/meslehet.txt')}\n\n👤 **İSDƏYƏN:** {query.from_user.mention}", reply_markup=buton)
+    await query.edit_message_text(f"[❤ N A Z R Y N](https://t.me/nezrintaggerbot)\n\n{await random_line('kolge/txt/meslehet.txt')}\n\n👤 **İSDƏYƏN:** {query.from_user.mention}", reply_markup=buton)
 
 
 @app.on_callback_query(filters.regex("taimm"))
@@ -364,7 +364,7 @@ async def deyis(_, query: CallbackQuery):
 
 @app.on_callback_query(filters.regex("mahni"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot) **Dan Sizin Üçün Random Olaraq Musiqi Sözləri:**\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=bio)
+    await query.edit_message_text(f"[❤ N A Z R Y N](https://t.me/nezrintaggerbot) **Dan Sizin Üçün Random Olaraq Musiqi Sözləri:**\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=bio)
 
 
 @app.on_message(filters.command(["pp"]))
@@ -397,7 +397,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**❌ PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
+    return await event.respond("**🤚🏼 PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -485,7 +485,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("*❌ PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
+    return await event.respond("*🤚🏼 PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -574,7 +574,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("❌ PM Də Tağ Olmaz**")
+    return await event.respond("🤚🏼 PM Də Tağ Olmaz**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
@@ -661,7 +661,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**❌ PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
+    return await event.respond("**🤚🏼 PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -747,7 +747,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**❌ PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
+    return await event.respond("**🤚🏼 PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -832,7 +832,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**❌ PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
+    return await event.respond("**🤚🏼 PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -917,7 +917,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**❌ PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
+    return await event.respond("**🤚🏼 PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -1003,7 +1003,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**❌ PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
+    return await event.respond("**🤚🏼 PM Də Tağ Olmaz**\n**✅ Bu Əmr Sadəcə Qruplarda Və Kanallarda Keçərlidi!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -1088,7 +1088,7 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("❌ PM Də Tağ Olmaz**")
+    return await event.respond("🤚🏼 PM Də Tağ Olmaz**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
@@ -1191,7 +1191,7 @@ async def tag_admin(event):
  
 @client.on(events.NewMessage(pattern='(?i)/taim+'))
 async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.respond(f"\n💁‍♂️ [𝐗𝐀𝐎𝐒](https://t.me/XAOS_Tagbot) **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDi**\n\n🎨  [TEMA  -  TOXUN 👇]({random.choice(taım)})",
+    await event.respond(f"\n💁‍♂️ [N A Z R Y N](https://t.me/nezrintaggerbot) **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDi**\n\n🎨  [TEMA  -  TOXUN 👇]({random.choice(taım)})",
 		      buttons=(
 			   
                       [Button.inline("♻️ DƏYİŞ", data="tema")],
@@ -1202,7 +1202,7 @@ async def yeni_mesaj(event: events.NewMessage.Event):
  
 @client.on(events.callbackquery.CallbackQuery(data="tema"))
 async def yeni_mesaj(event: events.NewMessage.Event):
-    await event.respond(f"\n💁‍♂️ [𝐗𝐀𝐎𝐒](https://t.me/XAOS_Tagbot) **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDi**\n\n🎨  [TEMA  -  TOXUN 👇]({random.choice(taım)})",
+    await event.respond(f"\n💁‍♂️ [N A Z R Y N](https://t.me/nezrintaggerbot) **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDi**\n\n🎨  [TEMA  -  TOXUN 👇]({random.choice(taım)})",
 		
 		      buttons=(
 		
@@ -1269,7 +1269,7 @@ async def duyuru(event):
 
 @client.on(events.NewMessage(pattern="^[.!/]stats$"))
 async def start(event):
-  await event.reply(f"**📊 [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) -Un İstatiskası**", buttons=(
+  await event.reply(f"**📊 [N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿](https://t.me/NezrinTaggerBot) -Un İstatiskası**", buttons=(
                       [
                        Button.inline("Stats", data="stats")
                       ],
@@ -1280,7 +1280,7 @@ async def start(event):
 async def hg(bot: Client, msg: Message):
     for new_user in msg.new_chat_members:
         if str(new_user.id) == str(BOT_ID):
-            await msg.reply(f'Hey {msg.from_user.mention} Məni {msg.chat.title} Qrupuna Aldığın Üçün Təşəkürlər⚡️`\nQrublarda 50.000 Userə Qədər İnsanları Tağ Edə Bilərəm.\nDaha Çox Məlumat Üçün\n[𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) - Ə PM də Start Verin')
+            await msg.reply(f'Hey {msg.from_user.mention} Məni {msg.chat.title} Qrupuna Aldığın Üçün Təşəkürlər⚡️`\nQrublarda 50.000 Userə Qədər İnsanları Tağ Edə Bilərəm.\nDaha Çox Məlumat Üçün\n[N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿](https://t.me/nezrintaggerbot) - Ə PM də Start Verin')
 
         elif str(new_user.id) == str(OWNER_ID):
             await msg.reply(
