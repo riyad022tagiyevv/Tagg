@@ -115,7 +115,7 @@ async def start(event):
   await event.reply(f"**👋 Salam {ad}\nMən  N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿**\n**N A Z R Y N Federasiyasının Rəsmi Tağ botuyam**\n**⚡ N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿 İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm**\n**Əmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun**\n**ℹ Mənim Qruplarda Asan Və Sürətli İşləyə Bilməyim Üçün Mənə Qrupunuzda Sadə Adminlik Vermənizi Rica Edirem**",
                     buttons=(
 			    
-		      [Button.url('➕ Qrupa Əlavə Et ➕', 'https://t.me/XAOS_Tagbot?startgroup=a'),
+		      [Button.url('➕ Qrupa Əlavə Et ➕', 'https://t.me/NezrinTaggerbot?startgroup=a'),
                       Button.url('🦁 D͏əs͏t͏ək͏', f'https://t.me/nezrinsupp')],
                       [Button.url('🇦🇿 ᴋᴜʀᴜᴄᴜ 🚫', f'https://t.me/hmnevar'),
                       Button.inline("⚙ Əmrlər", data="help")],
@@ -199,7 +199,7 @@ async def handler(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="stats"))
 async def handler(event):
-    await event.edit(f"📊 [𝕏𝔸𝕆𝕊 𝕋𝔸𝔾𝔾𝔼ℝ](https://t.me/XAOS_Tagbot) İn İstatisqası:\n\n🗂 Toplam Qrup Sayı: `{len(grup_sayi)}`\n📈 Aktiv Qrup Sayı: `{len(anlik_calisan)}`")
+    await event.edit(f"📊 [N A Z R Y N 𝗧𝗮𝗴𝗴𝗲𝗿](https://t.me/NezrinTaggerBot) İn İstatisqası:\n\n🗂 Toplam Qrup Sayı: `{len(grup_sayi)}`\n📈 Aktiv Qrup Sayı: `{len(anlik_calisan)}`")
 
 
 @client.on(events.callbackquery.CallbackQuery(data="tag"))
@@ -325,7 +325,7 @@ async def commit(_, message):
 	
 @app.on_message(filters.command("tema", ["/", "!", "@", "."]))
 async def commit(_, message): 
-    await message.reply_text(f"🤖 [N A Z R Y N](https://t.me/NezrinTaggerbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
+    await message.reply_text(f"💞 [N A Z R Y N](https://t.me/NezrinTaggerbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤 **İSDƏDİ:**  {message.from_user.mention}", reply_markup=temas)
 
 
 @app.on_message(filters.command("meslehet", ["/", "!", "@", "."]))
@@ -350,17 +350,17 @@ async def deyis(_, query: CallbackQuery):
 
 @app.on_callback_query(filters.regex("taimm"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text(f"🤖 [𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤** İSDƏDİ:**  {query.from_user.mention}", reply_markup=temas)
+    await query.edit_message_text(f"🤖 [N A Z R Y N](https://t.me/nezrintaggerbot)  **SİZİN ÜÇÜN RANDOM OLARAQ TEMA SEÇDİ**\n\n{await random_line('kolge/txt/tema.txt')}\n\n👤** İSDƏDİ:**  {query.from_user.mention}", reply_markup=temas)
 
 
 @app.on_callback_query(filters.regex("sevgi"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/sevgi.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=sev)
+    await query.edit_message_text(f"[❤ N A Z R Y N](https://t.me/nezrintaggerbot)\n\n{await random_line('kolge/txt/sevgi.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=sev)
 
 
 @app.on_callback_query(filters.regex("bio"))
 async def deyis(_, query: CallbackQuery):
-    await query.edit_message_text(f"[❤ 𝕏𝔸𝕆𝕊](https://t.me/XAOS_Tagbot)\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=bio)
+    await query.edit_message_text(f"[❤ N A Z R Y N ](https://t.me/nezrintaggerbot)\n\n{await random_line('kolge/txt/bio.txt')}\n\n👤** TƏLƏB:**  {query.from_user.mention}", reply_markup=bio)
 
 @app.on_callback_query(filters.regex("mahni"))
 async def deyis(_, query: CallbackQuery):
